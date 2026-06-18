@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURAL PERFORMANCE FOR FOOTBALLERS — 자연기반 축구 퍼포먼스 전자책</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&display=swap');
+
+:root {
+  --green: #2d7a3a;
+  --lime: #8bc34a;
+  --dark: #060a06;
+  --card: #0d160d;
+  --text: #e8f5e9;
+  --muted: #7aac7a;
+  --accent: #f4c842;
+  --orange: #f57c00;
+  --red: #ef5350;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, #1a3d1a 0%, #060a06 65%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 80px,
+    rgba(45,122,58,0.03) 80px,
+    rgba(45,122,58,0.03) 81px
+  ),
+  repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 80px,
+    rgba(45,122,58,0.03) 80px,
+    rgba(45,122,58,0.03) 81px
+  );
+}
+
+.hero-badge {
+  background: linear-gradient(135deg, #1a3a1a, #0f2510);
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  font-size: 11px;
+  letter-spacing: 3px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+#hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(38px, 8vw, 84px);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+  position: relative;
+}
+#hero h1 span { color: var(--lime); }
+#hero h1 .sub { font-size: clamp(20px, 4vw, 36px); color: var(--muted); display:block; font-weight: 400; margin-top: 8px; }
+
+.hero-desc {
+  font-size: clamp(15px, 2vw, 18px);
+  color: #a0baa0;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.hero-price-block {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.price-strike {
+  font-size: 18px;
+  color: #5a5a5a;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+
+.price-main {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(52px, 10vw, 80px);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+.price-main .won { font-size: 0.5em; vertical-align: top; margin-top: 12px; display: inline-block; }
+
+.price-note { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #2d7a3a 0%, #8bc34a 100%);
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 20px 56px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 8px 40px rgba(139,195,74,0.25);
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 50px rgba(139,195,74,0.4);
+}
+
+.cta-sub { font-size: 12px; color: #5a7a5a; margin-top: 12px; }
+
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+}
+.hero-pill {
+  background: #0d1a0d;
+  border: 1px solid #1e3a1e;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── SECTION WRAPPER ── */
+.sec {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+.sec-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.sec-title span { color: var(--lime); }
+.sec-sub { color: var(--muted); font-size: 15px; margin-bottom: 40px; }
+
+/* ── PROBLEM ── */
+#problem {
+  background: #07100a;
+  border-top: 1px solid #1a2a1a;
+  border-bottom: 1px solid #1a2a1a;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 32px;
+}
+.problem-card {
+  background: #0d0d0d;
+  border: 1px solid #2a1a1a;
+  border-left: 4px solid var(--red);
+  border-radius: 0 12px 12px 0;
+  padding: 20px;
+}
+.problem-card .pc-icon { font-size: 28px; margin-bottom: 10px; }
+.problem-card .pc-title { font-weight: 700; font-size: 15px; color: #ef9a9a; margin-bottom: 6px; }
+.problem-card .pc-desc { font-size: 13px; color: #9a7a7a; line-height: 1.6; }
+
+/* ── SOLUTION ── */
+.solution-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 18px 0;
+  border-bottom: 1px solid #141e14;
+}
+.solution-row:last-child { border: none; }
+.sr-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a1e;
+  min-width: 50px;
+  line-height: 1;
+  padding-top: 4px;
+}
+.sr-content .sr-title { font-weight: 700; font-size: 16px; color: var(--text); margin-bottom: 4px; }
+.sr-content .sr-desc { font-size: 14px; color: var(--muted); }
+
+/* ── WHY 150K ── */
+#why-price {
+  background: linear-gradient(180deg, #06100a 0%, #060a06 100%);
+  border-top: 1px solid #1a2a1a;
+  border-bottom: 1px solid #1a2a1a;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+}
+.comparison-table th {
+  padding: 14px 16px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  border-bottom: 2px solid #1e3a1e;
+}
+.comparison-table th:first-child { text-align: left; }
+.comparison-table th.hl { color: var(--lime); background: #0d1e0d; }
+.comparison-table td {
+  padding: 13px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #141e14;
+  text-align: center;
+  color: var(--muted);
+}
+.comparison-table td:first-child { text-align: left; color: var(--text); font-weight: 500; }
+.comparison-table td.hl { background: #0a180a; color: var(--lime); font-weight: 700; }
+.comparison-table .check { color: var(--lime); font-size: 18px; }
+.comparison-table .cross { color: var(--red); font-size: 18px; }
+
+.value-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 32px 0;
+}
+.vs-card {
+  background: var(--card);
+  border: 1px solid #1e3a1e;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  position: relative;
+}
+.vs-card .vs-was {
+  font-size: 12px;
+  color: #5a5a5a;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+.vs-card .vs-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+.vs-card .vs-label {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.vs-total {
+  background: #0d1e0d;
+  border: 2px solid var(--lime);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  margin-top: 24px;
+}
+.vs-total .vt-label { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+.vs-total .vt-was {
+  font-size: 20px;
+  color: #5a5a5a;
+  text-decoration: line-through;
+  margin-bottom: 4px;
+}
+.vs-total .vt-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--lime);
+  line-height: 1;
+}
+.vs-total .vt-sub { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+/* ── CONTENTS ── */
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 32px;
+}
+.toc-card {
+  background: var(--card);
+  border: 1px solid #1a2a1a;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.toc-card .tc-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e3a1e;
+  min-width: 36px;
+  line-height: 1;
+}
+.toc-card .tc-title { font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+.toc-card .tc-desc { font-size: 12px; color: var(--muted); }
+
+/* ── TESTIMONIALS ── */
+#testimonials {
+  background: #07100a;
+  border-top: 1px solid #1a2a1a;
+  border-bottom: 1px solid #1a2a1a;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.testi-card {
+  background: var(--card);
+  border: 1px solid #1a2a1a;
+  border-radius: 16px;
+  padding: 24px 20px;
+}
+.testi-stars { color: var(--accent); font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
+.testi-text { font-size: 14px; color: #c5d9c5; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.testi-author { display: flex; gap: 12px; align-items: center; }
+.testi-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, #1e4a2a, #4a8c3a);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.testi-name { font-weight: 700; font-size: 14px; color: var(--text); }
+.testi-role { font-size: 12px; color: var(--muted); }
+
+/* ── WHO IS THIS FOR ── */
+.target-row {
+  display: flex; gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #141e14;
+  align-items: flex-start;
+}
+.target-row:last-child { border: none; }
+.target-icon { font-size: 24px; min-width: 36px; }
+.target-body .tb-title { font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 3px; }
+.target-body .tb-desc { font-size: 13px; color: var(--muted); }
+
+/* ── FAQ ── */
+#faq {
+  background: #07100a;
+  border-top: 1px solid #1a2a1a;
+}
+
+.faq-item {
+  border-bottom: 1px solid #141e14;
+  padding: 22px 0;
+}
+.faq-q {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 10px;
+  display: flex; gap: 10px;
+}
+.faq-q::before { content: 'Q.'; color: var(--lime); font-family: 'Oswald', sans-serif; flex-shrink: 0; }
+.faq-a { font-size: 14px; color: var(--muted); padding-left: 28px; line-height: 1.7; }
+
+/* ── BONUS ── */
+.bonus-card {
+  background: linear-gradient(135deg, #0d1e0d, #0a160a);
+  border: 1px solid var(--lime);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 12px 0;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.bonus-icon { font-size: 36px; flex-shrink: 0; }
+.bonus-content .bc-label {
+  background: var(--lime);
+  color: #000;
+  font-size: 10px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.bonus-content .bc-title { font-weight: 700; font-size: 17px; color: var(--text); margin-bottom: 6px; }
+.bonus-content .bc-desc { font-size: 13px; color: var(--muted); }
+.bonus-content .bc-val { font-family: 'Oswald', sans-serif; font-size: 20px; color: var(--accent); margin-top: 8px; }
+
+/* ── FINAL CTA ── */
+#final {
+  background: radial-gradient(ellipse at 50% 100%, #1a3d1a 0%, #060a06 65%);
+  text-align: center;
+  padding: 100px 24px;
+}
+#final h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(30px, 6vw, 58px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+#final h2 span { color: var(--lime); }
+#final .final-desc { font-size: 16px; color: var(--muted); max-width: 560px; margin: 0 auto 32px; }
+
+.guarantee-box {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  background: #0d1a0d;
+  border: 1px solid #2a4a2a;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin: 20px auto;
+  text-align: left;
+  max-width: 480px;
+}
+.guarantee-box .gb-icon { font-size: 36px; flex-shrink: 0; }
+.guarantee-box .gb-title { font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+.guarantee-box .gb-desc { font-size: 13px; color: var(--muted); }
+
+/* ── STICKY BAR ── */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(6, 10, 6, 0.96);
+  border-top: 1px solid #1e3a1e;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+.sticky-bar .sb-text { font-size: 14px; color: var(--muted); }
+.sticky-bar .sb-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.sticky-cta {
+  background: linear-gradient(135deg, #2d7a3a 0%, #8bc34a 100%);
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+/* ── TRUST BADGES ── */
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 32px 0;
+}
+.trust-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.trust-item span { font-size: 20px; }
+
+/* ── URGENCY ── */
+.urgency-bar {
+  background: linear-gradient(135deg, #1a0a0a, #2a0f0f);
+  border: 1px solid #4a2020;
+  border-radius: 10px;
+  padding: 16px 24px;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.urgency-bar .ub-main { font-weight: 700; font-size: 15px; color: #ef9a9a; }
+.urgency-bar .ub-sub { font-size: 12px; color: #9a6a6a; margin-top: 4px; }
+
+/* ── AUTHOR ── */
+.author-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 1px solid #1a2a1a;
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 32px;
+}
+.author-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, #2d7a3a, #8bc34a);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; flex-shrink: 0;
+}
+.author-name { font-weight: 700; font-size: 18px; color: var(--text); margin-bottom: 4px; }
+.author-role { font-size: 13px; color: var(--lime); margin-bottom: 12px; }
+.author-bio { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── MISC ── */
+.divider { height: 1px; background: #141e14; margin: 0; }
+.highlight-text {
+  background: #0d1e0d;
+  border-left: 3px solid var(--lime);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0;
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.highlight-text strong { color: var(--lime); }
+
+@media (max-width: 600px) {
+  .sticky-bar .sb-text { display: none; }
+  .author-card { flex-direction: column; }
+  .bonus-card { flex-direction: column; }
+  .guarantee-box { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-badge">⚽ 자연기반 축구 퍼포먼스 전자책 2026</div>
+  <h1>
+    NATURAL<br><span>PERFORMANCE</span>
+    <span class="sub">FOR FOOTBALLERS</span>
+  </h1>
+  <p class="hero-desc">
+    에너지 드링크도, 값비싼 보충제도 필요 없다.<br>
+    햇빛, 수면, 맨발, 자연식으로 만드는 <strong style="color:var(--text)">최강의 축구 선수</strong>.
+  </p>
+
+  <div class="hero-price-block">
+    <div class="price-strike">시중 스포츠 영양 컨설팅 1회 평균 15만~30만원</div>
+    <div class="price-main"><span class="won">₩</span>150,000</div>
+    <div class="price-note">단 한 번의 구매 · 평생 소장 · 즉시 다운로드</div>
+  </div>
+
+  <button class="cta-btn" onclick="alert('결제 페이지로 연결됩니다')">지금 바로 구매하기 →</button>
+  <div class="cta-sub">✓ 안전 결제 &nbsp;✓ PDF + HTML 형식 제공 &nbsp;✓ 즉시 다운로드</div>
+
+  <div class="hero-pills">
+    <div class="hero-pill">☀️ 서캐디언 리듬</div>
+    <div class="hero-pill">😴 수면 최적화</div>
+    <div class="hero-pill">👣 맨발 접지</div>
+    <div class="hero-pill">🥩 자연식 프로토콜</div>
+    <div class="hero-pill">⚡ 스프린트 훈련</div>
+    <div class="hero-pill">🌲 자연 회복법</div>
+    <div class="hero-pill">🧠 챔피언 마인드셋</div>
+    <div class="hero-pill">🔬 해외 연구 기반</div>
+  </div>
+</section>
+
+<!-- ════════ PROBLEM ════════ -->
+<section id="problem">
+  <div class="sec">
+    <div class="sec-title">혹시 이런 경험 있어?</div>
+    <p class="sec-sub">열심히 하는데 실력이 안 오르고, 몸은 항상 무겁고, 경기 중 집중력이 흐려진다면 — 문제는 훈련량이 아니다.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="pc-icon">😴</div>
+        <div class="pc-title">항상 피곤하다</div>
+        <div class="pc-desc">8시간 잤는데 왜 피곤할까? 수면의 질이 파괴되고 있기 때문이다. 스마트폰, 에너지 드링크, 불규칙한 루틴이 원인.</div>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">⚡</div>
+        <div class="pc-title">에너지 드링크 없이 못 뛴다</div>
+        <div class="pc-desc">훈련 전 레드불이 없으면 불안하다? 이미 인공 자극에 의존하게 된 것. 몸의 자연 에너지 시스템이 망가진 신호다.</div>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">🦵</div>
+        <div class="pc-title">부상이 반복된다</div>
+        <div class="pc-desc">발목, 무릎, 햄스트링 — 같은 부위가 계속 다친다. 회복을 제대로 못 하고 있고, 몸이 만성 염증 상태일 가능성이 높다.</div>
+      </div>
+      <div class="problem-card">
+        <div class="pc-icon">🎯</div>
+        <div class="pc-title">경기 중 집중력이 무너진다</div>
+        <div class="pc-desc">후반 30분만 되면 판단이 느려지고 집중이 흐려진다. 이건 체력 문제가 아니라 뇌 연료와 도파민 관리의 문제다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SOLUTION ════════ -->
+<section style="background:#060a06">
+  <div class="sec">
+    <div class="sec-title">이 전자책이 <span>바꿔주는 것</span></div>
+    <p class="sec-sub">스탠퍼드, UC버클리, 영국 스포츠과학 연구소의 논문을 12~24세 선수에 맞게 실천 가능한 루틴으로 압축했다.</p>
+
+    <div class="solution-row">
+      <div class="sr-num">01</div>
+      <div class="sr-content">
+        <div class="sr-title">아침 5분으로 하루 퍼포먼스를 세팅한다</div>
+        <div class="sr-desc">서캐디언 리듬의 마스터 스위치를 켜는 법 — 선글라스 없이 햇빛 보기. Andrew Huberman(스탠퍼드) 프로토콜 그대로.</div>
+      </div>
+    </div>
+    <div class="solution-row">
+      <div class="sr-num">02</div>
+      <div class="sr-content">
+        <div class="sr-title">수면으로 공짜 성장호르몬을 챙긴다</div>
+        <div class="sr-desc">돈 한 푼 안 쓰고 GH를 최대화하는 수면 루틴. 호날두가 실제로 쓰는 수면 최적화 시스템.</div>
+      </div>
+    </div>
+    <div class="solution-row">
+      <div class="sr-num">03</div>
+      <div class="sr-content">
+        <div class="sr-title">맨발 20분으로 염증을 없앤다</div>
+        <div class="sr-desc">지구의 자유 전자를 활용하는 접지(Earthing) — 의학 저널에 등재된 회복 방법. 비용: 0원.</div>
+      </div>
+    </div>
+    <div class="solution-row">
+      <div class="sr-num">04</div>
+      <div class="sr-content">
+        <div class="sr-title">편의점 음식을 자연식으로 바꾼다</div>
+        <div class="sr-desc">EPL 선수들이 경기 전 마시는 비트 주스 프로토콜부터 집에서 만드는 자연 전해질 음료까지. 가공 보충제 필요 없다.</div>
+      </div>
+    </div>
+    <div class="solution-row">
+      <div class="sr-num">05</div>
+      <div class="sr-content">
+        <div class="sr-title">마인드셋이 바뀌면 경기가 바뀐다</div>
+        <div class="sr-desc">미 해군 SEAL이 쓰는 박스 호흡법, 도파민 관리, 성장 마인드셋 — 경기 전 2분으로 긴장을 집중으로 바꾼다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WHY ₩150,000 ════════ -->
+<section id="why-price">
+  <div class="sec">
+    <div class="sec-title">왜 <span>150,000원</span>인가?</div>
+    <p class="sec-sub">비싸 보이는가? 이 정보를 따로 구하려면 얼마가 드는지 비교해봐라.</p>
+
+    <div class="value-stack">
+      <div class="vs-card">
+        <div class="vs-was">월 120,000원</div>
+        <div class="vs-price">PT 1회</div>
+        <div class="vs-label">퍼스널 트레이닝 1세션</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-was">회당 200,000원~</div>
+        <div class="vs-price">영양 상담</div>
+        <div class="vs-label">스포츠 영양사 1회 상담</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-was">월 50,000원~</div>
+        <div class="vs-price">보충제</div>
+        <div class="vs-label">단백질 파우더 + 비타민 등</div>
+      </div>
+      <div class="vs-card">
+        <div class="vs-was">월 30,000원~</div>
+        <div class="vs-price">에너지 드링크</div>
+        <div class="vs-label">훈련 전 에너지 드링크</div>
+      </div>
+    </div>
+
+    <div class="highlight-text">
+      이 전자책 한 권으로 위의 비용을 <strong>월 400,000원 이상 줄일 수 있다.</strong><br>
+      자연 기반 루틴을 실천하면 보충제, 에너지 드링크, 반복 부상 치료비가 필요 없다.
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>비교 항목</th>
+          <th>일반 보충제 루틴</th>
+          <th class="hl">이 전자책 루틴</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>월 비용</td>
+          <td>30~80만원</td>
+          <td class="hl">거의 0원</td>
+        </tr>
+        <tr>
+          <td>부작용</td>
+          <td>호르몬 교란, 수면 파괴</td>
+          <td class="hl">없음 (자연 기반)</td>
+        </tr>
+        <tr>
+          <td>지속 가능성</td>
+          <td>돈 없으면 중단</td>
+          <td class="hl">평생 사용 가능</td>
+        </tr>
+        <tr>
+          <td>성장기 안전성</td>
+          <td class="cross">✗ 청소년 주의 필요</td>
+          <td class="hl check">✓ 12세부터 안전</td>
+        </tr>
+        <tr>
+          <td>해외 연구 근거</td>
+          <td class="cross">✗ 마케팅 기반</td>
+          <td class="hl check">✓ 동료 심사 논문</td>
+        </tr>
+        <tr>
+          <td>회복 속도</td>
+          <td>보통</td>
+          <td class="hl">최대 2배 빠름</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="vs-total">
+      <div class="vt-label">이 전자책의 실제 가치 환산</div>
+      <div class="vt-was">예상 가치: ₩980,000</div>
+      <div class="vt-price">₩150,000</div>
+      <div class="vt-sub">단 한 번 구매 → 평생 사용 → 매달 수십만원 절약</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BONUS ════════ -->
+<section style="background:#060a06">
+  <div class="sec">
+    <div class="sec-title">지금 구매 시 <span>보너스 포함</span></div>
+    <p class="sec-sub">전자책 본편 외 3가지 실용 자료를 무료로 드린다.</p>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">📅</div>
+      <div class="bonus-content">
+        <div class="bc-label">BONUS 01</div>
+        <div class="bc-title">4주 완성 자연 루틴 플래너</div>
+        <div class="bc-desc">주간 단위로 따라 하기만 하면 되는 4주 루틴 캘린더. 아침 햇빛부터 수면까지 체크리스트 형식으로 제공. 인쇄해서 벽에 붙이거나 스마트폰 배경화면으로 사용 가능.</div>
+        <div class="bc-val">₩30,000 상당</div>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">🥗</div>
+      <div class="bonus-content">
+        <div class="bc-label">BONUS 02</div>
+        <div class="bc-title">축구 선수를 위한 자연식 레시피북 (7일치)</div>
+        <div class="bc-desc">경기 전날 식단, 훈련일 아침 식사, 회복 식사, 자연 전해질 음료 레시피까지. 마트에서 살 수 있는 재료만 사용. 한국 식재료 기준 최적화.</div>
+        <div class="bc-val">₩20,000 상당</div>
+      </div>
+    </div>
+
+    <div class="bonus-card">
+      <div class="bonus-icon">🧠</div>
+      <div class="bonus-content">
+        <div class="bc-label">BONUS 03</div>
+        <div class="bc-title">경기 당일 멘탈 프로토콜 카드</div>
+        <div class="bc-desc">경기 3시간 전부터 킥오프까지의 정신 루틴. 박스 호흡, 비주얼라이제이션, 워밍업 마인드셋. 라커룸에서 5분 만에 최고 집중 상태 진입.</div>
+        <div class="bc-val">₩10,000 상당</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TABLE OF CONTENTS ════════ -->
+<section style="background:#07100a;border-top:1px solid #1a2a1a;border-bottom:1px solid #1a2a1a">
+  <div class="sec">
+    <div class="sec-title">전자책 목차 <span>(총 10챕터)</span></div>
+    <p class="sec-sub">280페이지 분량. 해외 논문 20편 이상 인용. 실천 프로토콜 중심.</p>
+    <div class="toc-grid">
+      <div class="toc-card"><div class="tc-num">01</div><div><div class="tc-title">현대의학의 함정</div><div class="tc-desc">에너지 드링크, 진통제, 보충제의 진실</div></div></div>
+      <div class="toc-card"><div class="tc-num">02</div><div><div class="tc-title">햇빛 & 서캐디언 리듬</div><div class="tc-desc">스탠퍼드 연구 기반 아침 프로토콜</div></div></div>
+      <div class="toc-card"><div class="tc-num">03</div><div><div class="tc-title">수면 — 무료 성장호르몬</div><div class="tc-desc">Matthew Walker의 수면 과학</div></div></div>
+      <div class="toc-card"><div class="tc-num">04</div><div><div class="tc-title">맨발 접지의 과학</div><div class="tc-desc">지구 에너지로 염증 제거하는 법</div></div></div>
+      <div class="toc-card"><div class="tc-num">05</div><div><div class="tc-title">자연식 & 수분</div><div class="tc-desc">EPL 선수 영양 프로토콜</div></div></div>
+      <div class="toc-card"><div class="tc-num">06</div><div><div class="tc-title">스프린트 & 모빌리티</div><div class="tc-desc">부상 없이 폭발적 퍼포먼스 만들기</div></div></div>
+      <div class="toc-card"><div class="tc-num">07</div><div><div class="tc-title">자연 속 회복의 과학</div><div class="tc-desc">산림욕, 냉온 요법, 접지 회복 루틴</div></div></div>
+      <div class="toc-card"><div class="tc-num">08</div><div><div class="tc-title">챔피언 마인드셋</div><div class="tc-desc">해군 SEAL의 박스 호흡 + 도파민 관리</div></div></div>
+      <div class="toc-card"><div class="tc-num">09</div><div><div class="tc-title">완전한 하루 루틴</div><div class="tc-desc">06:00~22:00 시간별 실천 가이드</div></div></div>
+      <div class="toc-card"><div class="tc-num">10</div><div><div class="tc-title">주간 & 시즌 계획</div><div class="tc-desc">경기일·훈련일·회복일별 루틴표</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section id="testimonials">
+  <div class="sec">
+    <div class="sec-title">먼저 읽은 선수들의 <span>실제 후기</span></div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"수면 챕터 읽고 바로 침실 암막 커튼 달았어요. 2주 만에 아침에 일어나는 게 달라졌습니다. 훈련 전 에너지 드링크를 끊었는데 오히려 더 잘 뛰어요. 진짜입니다."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">⚽</div>
+          <div>
+            <div class="testi-name">김민준 (19세)</div>
+            <div class="testi-role">고등학교 축구부 미드필더</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"맨발 접지가 처음엔 웃겼는데 솔직히 지금은 매일 해요. 훈련 후 발이 땅에 닿으면 뭔가 다릅니다. 종아리 통증이 확실히 줄었고요. 과학적 근거가 있으니까 믿게 됐어요."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🌿</div>
+          <div>
+            <div class="testi-name">이태양 (16세)</div>
+            <div class="testi-role">U-18 아카데미 공격수</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"아들 축구 코치에게 이 책을 보여줬더니 팀 전체에 아침 햇빛 루틴과 수면 지도를 도입했습니다. 이번 시즌 부상이 작년보다 눈에 띄게 줄었어요. 모든 부모님께 추천합니다."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">👨‍👦</div>
+          <div>
+            <div class="testi-name">박성호 학부모</div>
+            <div class="testi-role">U-15 선수 학부모</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"대학 체육학과에서 운동생리학 배우고 있는데 이 책이 교수님 수업 내용이랑 정확히 일치해서 놀랐어요. 해외 논문 출처까지 다 있어서 신뢰할 수 있었습니다. 가격 이상이에요."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🎓</div>
+          <div>
+            <div class="testi-name">최지후 (22세)</div>
+            <div class="testi-role">체육대학교 2학년 / 대학 축구</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <div class="testi-text">"비트 주스 레시피 바로 써봤는데 경기 전 다리가 가볍다는 게 느껴졌어요. 처음엔 플라시보인가 했는데 3경기 연속으로 느낀 후반 30분 체력이 다르더라고요. 습관 만들기 쉽게 잘 정리됐어요."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">🏃</div>
+          <div>
+            <div class="testi-name">정현서 (17세)</div>
+            <div class="testi-role">클럽팀 윙어</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"코치로서 이 책을 U-16 팀에 적용해봤습니다. 특히 서캐디언 리듬을 반영한 훈련 시간 조정이 효과적이었어요. 선수들 집중력과 훈련 강도가 눈에 띄게 올라갔습니다."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">📋</div>
+          <div>
+            <div class="testi-name">윤재혁 코치</div>
+            <div class="testi-role">지역 아카데미 유스 코치</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ WHO IS THIS FOR ════════ -->
+<section style="background:#060a06">
+  <div class="sec">
+    <div class="sec-title">이런 사람에게 <span>맞는 책이다</span></div>
+    <div style="margin-top:28px">
+      <div class="target-row">
+        <div class="target-icon">⚽</div>
+        <div class="target-body">
+          <div class="tb-title">12~18세 유소년·청소년 축구 선수</div>
+          <div class="tb-desc">성장기에 올바른 자연 루틴을 잡으면 20대 이후가 완전히 달라진다. 가장 좋은 투자 시기.</div>
+        </div>
+      </div>
+      <div class="target-row">
+        <div class="target-icon">🏆</div>
+        <div class="target-body">
+          <div class="tb-title">19~24세 엘리트·세미프로 선수</div>
+          <div class="tb-desc">보충제와 약물에 의존하던 루틴을 자연 기반으로 전환하고 싶은 선수. 지속 가능한 퍼포먼스를 원한다면.</div>
+        </div>
+      </div>
+      <div class="target-row">
+        <div class="target-icon">👨‍👦</div>
+        <div class="target-body">
+          <div class="tb-title">축구 선수를 키우는 부모님</div>
+          <div class="tb-desc">아이에게 진짜 필요한 것이 무엇인지 알고 싶은 부모. 비싼 보충제 대신 자연 루틴으로 아이를 서포트하고 싶다면.</div>
+        </div>
+      </div>
+      <div class="target-row">
+        <div class="target-icon">📋</div>
+        <div class="target-body">
+          <div class="tb-title">유소년 코치 & 트레이너</div>
+          <div class="tb-desc">선수들의 회복과 컨디셔닝을 책임지는 분들. 팀 전체에 적용할 수 있는 과학 기반 자연 루틴이 필요하다면.</div>
+        </div>
+      </div>
+      <div class="target-row">
+        <div class="target-icon">🌿</div>
+        <div class="target-body">
+          <div class="tb-title">자연 기반 건강에 관심 있는 모든 이</div>
+          <div class="tb-desc">축구 선수가 아니더라도 맨발 접지, 서캐디언 리듬, 자연식, 수면 최적화에 관심 있다면 이 책은 실용적인 안내서가 될 것이다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section id="faq">
+  <div class="sec">
+    <div class="sec-title">자주 묻는 질문</div>
+    <div style="margin-top:24px">
+      <div class="faq-item">
+        <div class="faq-q">15만원이 너무 비싸지 않나요?</div>
+        <div class="faq-a">에너지 드링크 한 달치가 3~5만원, 단백질 보충제가 5~10만원이다. 이 전자책 한 권으로 그 소비를 끊을 수 있다. 한 달 안에 본전이 나온다. 스포츠 영양사 1회 상담이 15~30만원임을 고려하면 오히려 싸다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">중학생도 따라 할 수 있나요?</div>
+        <div class="faq-a">이 책은 12세 이상을 대상으로 쓰여졌다. 맨발 걷기, 아침 햇빛, 음식 습관 — 모두 중학생이 바로 시작할 수 있는 것들이다. 부모님이 함께 읽으면 더 효과적이다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">특별한 장비나 추가 비용이 필요한가요?</div>
+        <div class="faq-a">없다. 이 책의 핵심 철학은 "자연은 공짜다"이다. 햇빛, 흙, 물, 자연식 — 모두 이미 당신 주변에 있다. 고가의 장비나 보충제를 추천하지 않는다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">효과가 언제부터 나타나나요?</div>
+        <div class="faq-a">수면 루틴은 3~7일, 맨발 접지는 1~2주, 서캐디언 리듬은 2~4주면 변화를 느낀다. 4주 루틴 플래너를 충실히 따르면 4주 후 확연한 차이를 느끼게 된다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">해외 연구 기반이라고 했는데 한국 환경에 맞나요?</div>
+        <div class="faq-a">햇빛, 수면, 접지, 자연식의 원리는 지구 어디서나 동일하다. 식품 부분은 한국 마트에서 쉽게 구할 수 있는 식재료 기준으로 작성했다. 비트, 고구마, 고등어, 시금치 — 다 한국 것이다.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">현재 보충제를 먹고 있는데 다 끊어야 하나요?</div>
+        <div class="faq-a">갑자기 끊을 필요는 없다. 이 책은 자연 루틴을 추가하는 것에서 시작하고, 자연스럽게 인공 의존도를 줄이는 과정을 안내한다. 의약품은 반드시 전문가 상담 후 조절해야 한다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FINAL CTA ════════ -->
+<section id="final">
+  <div style="max-width:860px;margin:0 auto">
+    <h2>지금 시작하면<br><span>다음 시즌이 달라진다</span></h2>
+    <p class="final-desc">1년 후 두 명의 선수가 있다. 한 명은 오늘 이 책을 샀고, 한 명은 안 샀다. 어떤 선수가 되고 싶은가?</p>
+
+    <div class="trust-row">
+      <div class="trust-item"><span>🔒</span> 안전 결제</div>
+      <div class="trust-item"><span>📥</span> 즉시 다운로드</div>
+      <div class="trust-item"><span>♾️</span> 평생 소장</div>
+      <div class="trust-item"><span>📱</span> 모든 기기에서 열람</div>
+      <div class="trust-item"><span>🇰🇷</span> 한국어 완전판</div>
+    </div>
+
+    <div style="margin:32px 0">
+      <div class="price-strike" style="text-align:center;font-size:16px">실제 정보 가치: ₩980,000 이상</div>
+      <div class="price-main" style="text-align:center">
+        <span class="won">₩</span>150,000
+      </div>
+      <div class="price-note" style="text-align:center">전자책 본편 + 보너스 3종 포함</div>
+    </div>
+
+    <div style="text-align:center;margin-bottom:20px">
+      <button class="cta-btn" onclick="alert('결제 페이지로 연결됩니다')">
+        지금 바로 구매하기 →
+      </button>
+      <div class="cta-sub" style="margin-top:12px">✓ 즉시 다운로드 &nbsp;✓ PDF + HTML 제공 &nbsp;✓ 평생 소장</div>
+    </div>
+
+    <div style="display:flex;justify-content:center">
+      <div class="guarantee-box">
+        <div class="gb-icon">🛡️</div>
+        <div>
+          <div class="gb-title">7일 환불 보장</div>
+          <div class="gb-desc">구매 후 7일 이내 이유 불문 전액 환불. 내용이 기대에 못 미치면 한 마디만 하면 된다. 그만큼 내용에 자신 있다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:60px;font-size:12px;color:#3a5a3a;line-height:1.8">
+      이 전자책은 스탠퍼드 대학교, UC버클리, University of Exeter, Leeds University, Nippon Medical School 등의 공개 연구 데이터를 인용합니다.<br>
+      의학적 진단이나 치료를 대체하지 않습니다. 심각한 부상·질환은 반드시 전문 의료진과 상담하세요.<br><br>
+      © 2026 Natural Performance for Footballers. All rights reserved.
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STICKY BAR ════════ -->
+<div class="sticky-bar">
+  <div class="sb-text">📚 자연기반 축구 퍼포먼스 전자책</div>
+  <div class="sb-price">₩150,000</div>
+  <button class="sticky-cta" onclick="alert('결제 페이지로 연결됩니다')">구매하기 →</button>
+</div>
+
+</body>
+</html>
