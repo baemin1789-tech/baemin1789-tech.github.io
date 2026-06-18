@@ -1,0 +1,1 @@
+file:///Users/baeminjae/Library/Application%20Support/Claude/local-agent-mode-sessions/b5e7769d-3d0b-4852-be1e-a333f751e950/a6ce2748-9432-4c92-b6a1-43cf68e3092e/local_825c7007-ae75-4e4d-8284-9a0ab3acedb7/outputs/natural_football_ebook.html
