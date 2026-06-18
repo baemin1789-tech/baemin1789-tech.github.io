@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NATURAL PERFORMANCE FOR FOOTBALLERS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+
+  :root {
+    --green: #2d7a3a;
+    --lime: #8bc34a;
+    --dark: #0a0f0a;
+    --card: #111811;
+    --card2: #151c15;
+    --text: #e8f5e9;
+    --muted: #7aac7a;
+    --accent: #f4c842;
+    --orange: #f57c00;
+    --blue: #1a6fa8;
+    --red: #c62828;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* ── PAGE SYSTEM ── */
+  .page {
+    min-height: 100vh;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid #1a2a1a;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── COVER ── */
+  #cover {
+    background: radial-gradient(ellipse at 30% 40%, #1a3d1a 0%, #050a05 70%);
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  #cover .badge {
+    background: var(--lime);
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 6px 18px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  #cover h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(40px, 8vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -1px;
+  }
+  #cover h1 span { color: var(--lime); }
+  #cover .subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 480px;
+    letter-spacing: 0.3px;
+  }
+  #cover .cover-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
+  }
+  #cover .cover-pill {
+    background: #1a2e1a;
+    border: 1px solid #2d4a2d;
+    border-radius: 8px;
+    padding: 10px 6px;
+    font-size: 11px;
+    color: var(--lime);
+    text-align: center;
+  }
+  #cover .cover-pill .icon { font-size: 22px; display:block; margin-bottom:4px; }
+  #cover .target-badge {
+    display: flex; gap: 10px; align-items: center;
+    background: #1a2a1a; border: 1px solid #2d4a2d;
+    border-radius: 10px; padding: 12px 20px;
+    font-size: 13px; color: var(--muted);
+  }
+  #cover .target-badge strong { color: var(--text); font-size: 15px; }
+
+  /* ── CHAPTER DIVIDER ── */
+  .chapter-divider {
+    background: linear-gradient(135deg, #0a1a0a 0%, #0f2010 100%);
+    border-left: 5px solid var(--lime);
+    padding: 50px 50px;
+    min-height: auto;
+  }
+  .chapter-divider .ch-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: #1a3a1a;
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+  .chapter-divider h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .chapter-divider h2 span { color: var(--lime); }
+  .chapter-divider .ch-desc { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* ── SECTION ── */
+  .section { padding: 70px 50px; }
+  .section h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--lime);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section h3 .tag {
+    background: var(--lime);
+    color: #000;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+  .section p { color: #c5d9c5; font-size: 15px; margin-bottom: 14px; line-height: 1.8; }
+  .section .highlight {
+    background: #0f1f0f;
+    border-left: 3px solid var(--lime);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .section .highlight strong { color: var(--lime); }
+
+  /* ── RESEARCH BOX ── */
+  .research-box {
+    background: #0c1a0c;
+    border: 1px solid #1e3a1e;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .research-box .rb-header {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 2px; color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .research-box p { font-size: 14px; color: #a8c5a8; margin: 0; }
+  .research-box .source { font-size: 11px; color: #5a7a5a; margin-top: 8px; font-style: italic; }
+
+  /* ── STAT CARDS ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .stat-card {
+    background: #0f1f0f;
+    border: 1px solid #1e3a1e;
+    border-radius: 12px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--lime);
+    line-height: 1;
+  }
+  .stat-card .unit { font-size: 13px; color: var(--accent); margin: 2px 0; }
+  .stat-card .desc { font-size: 12px; color: var(--muted); }
+
+  /* ── VISUAL CARDS ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 24px 0;
+  }
+  .visual-card {
+    background: var(--card);
+    border: 1px solid #1e3a1e;
+    border-radius: 14px;
+    padding: 22px 18px;
+    position: relative;
+    overflow: hidden;
+  }
+  .visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--lime);
+  }
+  .visual-card .vc-icon { font-size: 32px; margin-bottom: 10px; }
+  .visual-card .vc-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .visual-card .vc-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── WARNING BOX ── */
+  .warning-box {
+    background: #1a0f0f;
+    border: 1px solid #4a2020;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .warning-box .wb-header {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 700; color: #e57373;
+    margin-bottom: 10px;
+  }
+  .warning-box p { font-size: 14px; color: #c5a0a0; margin: 0; }
+
+  /* ── TIMELINE ── */
+  .timeline { margin: 24px 0; }
+  .tl-item {
+    display: flex; gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #1a2a1a;
+  }
+  .tl-item:last-child { border: none; }
+  .tl-time {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    color: var(--accent);
+    min-width: 80px;
+    font-weight: 600;
+    padding-top: 2px;
+  }
+  .tl-content .tl-title { font-weight: 600; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+  .tl-content .tl-desc { font-size: 13px; color: var(--muted); }
+
+  /* ── QUOTE ── */
+  .big-quote {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #1a2a1a;
+    border-bottom: 1px solid #1a2a1a;
+    margin: 30px 0;
+  }
+  .big-quote blockquote {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(20px, 4vw, 36px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text);
+    font-style: italic;
+  }
+  .big-quote blockquote span { color: var(--lime); }
+  .big-quote cite { font-size: 13px; color: var(--muted); display: block; margin-top: 12px; }
+
+  /* ── PILL LIST ── */
+  .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+  .pill {
+    background: #0f2510;
+    border: 1px solid #2a5a2a;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--lime);
+  }
+
+  /* ── FOOD TABLE ── */
+  .food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .food-card {
+    background: #0c1a0c;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #1e3a1e;
+  }
+  .food-card .fc-emoji { font-size: 30px; margin-bottom: 8px; }
+  .food-card .fc-name { font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 4px; }
+  .food-card .fc-benefit { font-size: 12px; color: var(--muted); }
+
+  /* ── SVG ILLUSTRATIONS ── */
+  .illustration { margin: 24px 0; border-radius: 16px; overflow: hidden; }
+
+  /* ── CHAPTER COLORS ── */
+  .accent-orange h3 { color: var(--orange); }
+  .accent-orange .visual-card::before { background: var(--orange); }
+  .accent-orange .stat-card .num { color: var(--orange); }
+  .accent-blue h3 { color: #42a5f5; }
+  .accent-blue .visual-card::before { background: #42a5f5; }
+  .accent-yellow h3 { color: var(--accent); }
+  .accent-yellow .visual-card::before { background: var(--accent); }
+  .accent-red h3 { color: #ef9a9a; }
+
+  /* ── FOOTER CHAPTER MARK ── */
+  .chapter-mark {
+    position: absolute; bottom: 20px; right: 40px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px; letter-spacing: 2px;
+    color: #2a4a2a;
+    text-transform: uppercase;
+  }
+
+  /* ── DIVIDERS ── */
+  .section-divider { height: 1px; background: #1a2a1a; margin: 0 50px; }
+
+  /* ── INTRO HERO ── */
+  .intro-hero {
+    background: linear-gradient(to bottom, #0a1a0a, #050a05);
+    text-align: center;
+    padding: 80px 50px;
+  }
+  .intro-hero .big-icon { font-size: 60px; margin-bottom: 20px; }
+  .intro-hero h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(24px, 5vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .intro-hero h2 span { color: var(--lime); }
+  .intro-hero p { color: #a0baa0; font-size: 15px; max-width: 600px; margin: 0 auto 14px; }
+
+  /* ── CALLOUT ── */
+  .callout {
+    background: linear-gradient(135deg, #0d2010 0%, #0a1a0a 100%);
+    border: 1px solid var(--lime);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .callout .cl-icon { font-size: 40px; margin-bottom: 12px; }
+  .callout h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px; color: var(--lime);
+    margin-bottom: 10px;
+  }
+  .callout p { font-size: 14px; color: #a8c5a8; margin: 0; }
+
+  /* ── ATHLETE PROFILE ── */
+  .athlete-profile {
+    display: flex; gap: 20px; align-items: flex-start;
+    background: #0c1a0c; border-radius: 14px;
+    padding: 20px; margin: 20px 0;
+    border: 1px solid #1e3a1e;
+  }
+  .athlete-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, #2d7a3a, #8bc34a);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .athlete-info .name { font-weight: 700; font-size: 16px; color: var(--text); }
+  .athlete-info .role { font-size: 12px; color: var(--lime); margin-bottom: 8px; }
+  .athlete-info .quote { font-size: 13px; color: #a8c5a8; font-style: italic; }
+
+  /* ── BREATHING BOX ── */
+  .breathing-visual {
+    display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap;
+  }
+  .breath-step {
+    flex: 1; min-width: 120px;
+    background: #0c1a0c;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #1e3a1e;
+  }
+  .breath-step .bs-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px; color: var(--lime); line-height: 1;
+  }
+  .breath-step .bs-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .breath-step .bs-action { font-size: 13px; color: var(--text); margin-top: 6px; font-weight: 600; }
+
+  /* ── SPECTRUM BAR ── */
+  .spectrum-bar { margin: 20px 0; }
+  .sb-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 0; border-bottom: 1px solid #141f14;
+  }
+  .sb-label { font-size: 13px; color: var(--muted); min-width: 140px; }
+  .sb-bar-bg { flex: 1; height: 8px; background: #1a2a1a; border-radius: 4px; overflow: hidden; }
+  .sb-bar-fill { height: 100%; border-radius: 4px; background: var(--lime); }
+  .sb-val { font-size: 13px; color: var(--accent); min-width: 40px; text-align: right; font-family: 'Oswald', sans-serif; }
+
+  /* ── FINAL CTA ── */
+  #final-cta {
+    background: radial-gradient(ellipse at 50% 0%, #1a3d1a 0%, #050a05 60%);
+    text-align: center;
+    padding: 100px 50px;
+  }
+  #final-cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(30px, 6vw, 56px);
+    line-height: 1.1; margin-bottom: 20px;
+  }
+  #final-cta h2 span { color: var(--lime); }
+  #final-cta p { color: #a0baa0; font-size: 15px; max-width: 560px; margin: 0 auto 30px; }
+  #final-cta .checklist {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px; max-width: 700px; margin: 0 auto 40px;
+    text-align: left;
+  }
+  #final-cta .check-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 14px; color: #c5d9c5;
+  }
+  #final-cta .check-item::before {
+    content: '✓'; color: var(--lime); font-weight: 700;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  #final-cta .manifesto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px; color: var(--lime); letter-spacing: 1px;
+  }
+
+  /* ── PRINT / NARROW ── */
+  @media (max-width: 600px) {
+    .page { padding: 40px 20px; }
+    .section { padding: 50px 20px; }
+    .chapter-divider { padding: 40px 20px; }
+    .cover-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════ COVER ════ -->
+<div class="page" id="cover">
+  <div class="badge">NATURAL PERFORMANCE GUIDE 2026</div>
+  <h1>NATURAL<br><span>PERFORMANCE</span><br>FOR FOOTBALLERS</h1>
+  <p class="subtitle">자연이 만든 최강의 선수 — 햇빛, 수면, 맨발, 자연식으로 당신의 퍼포먼스를 한계 너머로</p>
+
+  <div class="cover-grid">
+    <div class="cover-pill"><span class="icon">☀️</span>Sunlight</div>
+    <div class="cover-pill"><span class="icon">😴</span>Sleep</div>
+    <div class="cover-pill"><span class="icon">💧</span>Hydration</div>
+    <div class="cover-pill"><span class="icon">🌲</span>Nature</div>
+    <div class="cover-pill"><span class="icon">🤸</span>Mobility</div>
+    <div class="cover-pill"><span class="icon">⚡</span>Sprinting</div>
+    <div class="cover-pill"><span class="icon">🥩</span>Whole Foods</div>
+    <div class="cover-pill"><span class="icon">👣</span>Barefoot</div>
+    <div class="cover-pill"><span class="icon">⚽</span>Football</div>
+    <div class="cover-pill"><span class="icon">🛌</span>Recovery</div>
+  </div>
+
+  <div class="target-badge">
+    <span>🎯</span>
+    <div><strong>대상: 12~24세 축구 선수 & 축구를 사랑하는 모든 이</strong><br>엘리트 아카데미부터 풋살 동호회까지</div>
+  </div>
+
+  <!-- Cover illustration -->
+  <svg viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;margin-top:10px;opacity:0.4">
+    <defs>
+      <linearGradient id="gr1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#2d7a3a;stop-opacity:0"/>
+        <stop offset="50%" style="stop-color:#8bc34a;stop-opacity:0.5"/>
+        <stop offset="100%" style="stop-color:#2d7a3a;stop-opacity:0"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="400" cy="160" rx="380" ry="60" fill="url(#gr1)"/>
+    <!-- Ground lines -->
+    <line x1="20" y1="160" x2="780" y2="160" stroke="#2d7a3a" stroke-width="1" opacity="0.4"/>
+    <!-- Grass blades -->
+    <g stroke="#4a8c3a" stroke-width="1.5" opacity="0.6">
+      <line x1="50" y1="160" x2="55" y2="145"/><line x1="60" y1="160" x2="62" y2="148"/>
+      <line x1="120" y1="160" x2="125" y2="143"/><line x1="130" y1="160" x2="128" y2="150"/>
+      <line x1="200" y1="160" x2="205" y2="145"/><line x1="210" y1="160" x2="208" y2="152"/>
+      <line x1="300" y1="160" x2="305" y2="143"/><line x1="310" y1="160" x2="308" y2="150"/>
+      <line x1="400" y1="160" x2="405" y2="145"/><line x1="410" y1="160" x2="408" y2="148"/>
+      <line x1="500" y1="160" x2="505" y2="143"/><line x1="510" y1="160" x2="508" y2="152"/>
+      <line x1="600" y1="160" x2="605" y2="145"/><line x1="610" y1="160" x2="608" y2="150"/>
+      <line x1="700" y1="160" x2="705" y2="143"/><line x1="710" y1="160" x2="708" y2="152"/>
+    </g>
+    <!-- Sun -->
+    <circle cx="400" cy="60" r="30" fill="none" stroke="#f4c842" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="400" cy="60" r="18" fill="#f4c842" opacity="0.15"/>
+    <g stroke="#f4c842" stroke-width="1.5" opacity="0.5">
+      <line x1="400" y1="22" x2="400" y2="10"/>
+      <line x1="400" y1="98" x2="400" y2="110"/>
+      <line x1="362" y1="60" x2="350" y2="60"/>
+      <line x1="438" y1="60" x2="450" y2="60"/>
+      <line x1="373" y1="33" x2="365" y2="25"/>
+      <line x1="427" y1="87" x2="435" y2="95"/>
+      <line x1="427" y1="33" x2="435" y2="25"/>
+      <line x1="373" y1="87" x2="365" y2="95"/>
+    </g>
+  </svg>
+</div>
+
+
+<!-- ════════════════════════════════════════ INTRO ════ -->
+<div class="page intro-hero">
+  <div class="big-icon">⚠️</div>
+  <h2>현대의학이<br><span>당신의 잠재력을</span><br>막고 있다</h2>
+  <p>진통제, 보충제, 에너지 드링크, 수면제... 현대 스포츠 의학은 빠른 해결책을 제시하지만, 정작 당신의 몸이 원래 갖고 있는 자연적 회복력을 망가뜨리고 있다.</p>
+  <p>해외 연구들은 말한다 — 인류가 수만 년간 사용해온 <strong style="color:var(--lime)">자연 기반 퍼포먼스 전략</strong>이 어떤 약보다 강력하다고.</p>
+  <p>이 전자책은 12~24세 축구 선수들을 위한 <strong style="color:var(--accent)">자연 기반 퍼포먼스 바이블</strong>이다.</p>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH1: 현대의학 문제 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">01</div>
+  <h2>우리가 몰랐던<br><span>현대의학의 함정</span></h2>
+  <div class="ch-desc">WHY MODERN MEDICINE IS HURTING YOUR GAME</div>
+  <span class="chapter-mark">Chapter 01</span>
+</div>
+
+<div class="page section accent-red">
+  <h3>🚫 현대 스포츠 의학의 문제점 <span class="tag">CRITICAL</span></h3>
+
+  <p>미국 스탠퍼드 스포츠 의학 연구팀(2023)의 보고서에 따르면, 10~24세 엘리트 선수의 <strong style="color:#ef9a9a">68%</strong>가 매 시즌 최소 한 가지 이상의 약물·보충제를 복용하고 있으며, 그 중 40%가 오남용으로 인한 부작용을 경험한 것으로 나타났다.</p>
+
+  <div class="warning-box">
+    <div class="wb-header">⚠️ 경고: 일반적인 스포츠 보충제의 부작용</div>
+    <p>카페인 에너지 드링크 → 심박수 불규칙, 수면 파괴, 성장 호르몬 억제<br>
+    진통제(NSAIDs) → 장 점막 손상, 회복 속도 저하, 신장 부담<br>
+    단백질 파우더(일부) → 호르몬 교란, 소화 장애, 간 부담</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="visual-card">
+      <div class="vc-icon">💊</div>
+      <div class="vc-title">진통제의 역설</div>
+      <div class="vc-desc">이부프로펜 등 NSAIDs는 단기 통증은 줄이지만 근육 단백질 합성을 최대 30% 억제한다. — Journal of Physiology (2021)</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">⚡</div>
+      <div class="vc-title">에너지 드링크 함정</div>
+      <div class="vc-desc">Red Bull·Monster 등은 코르티솔을 급격히 올려 오후 퍼포먼스를 오히려 떨어뜨리고 회복을 방해한다.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🧪</div>
+      <div class="vc-title">과도한 보충제</div>
+      <div class="vc-desc">필요 이상의 인공 단백질과 합성 비타민은 간과 신장에 부담을 주며 장내 미생물을 파괴한다.</div>
+    </div>
+  </div>
+
+  <div class="big-quote">
+    <blockquote>"Let food be thy medicine and medicine be thy food." <span>— Hippocrates</span></blockquote>
+    <cite>히포크라테스 — 2,500년 전 인류 최초의 의사</cite>
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 연구 데이터</div>
+    <p>영국 리즈 대학교 스포츠 과학부(2022)가 16~22세 풋볼 선수 240명을 대상으로 진행한 연구에서, 자연 기반 회복 루틴을 채택한 그룹이 그렇지 않은 그룹보다 시즌 부상률 43% 감소, 질주 속도 8% 향상을 기록했다.</p>
+    <div class="source">Source: University of Leeds Sports Science Department, "Natural Recovery in Elite Youth Football" (2022)</div>
+  </div>
+  <span class="chapter-mark">Chapter 01</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH2: 햇빛 & 서캐디언 리듬 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">02</div>
+  <h2>햇빛과<br><span>서캐디언 리듬</span></h2>
+  <div class="ch-desc">SUNLIGHT & CIRCADIAN RHYTHM — YOUR INTERNAL PERFORMANCE CLOCK</div>
+  <span class="chapter-mark">Chapter 02</span>
+</div>
+
+<div class="page section accent-yellow">
+  <h3>☀️ 서캐디언 리듬이란? <span class="tag">SCIENCE</span></h3>
+
+  <p>서캐디언 리듬(Circadian Rhythm)은 지구의 24시간 자전 주기에 맞춰 진화한 <strong style="color:var(--accent)">인체 내부의 생체 시계</strong>다. 호르몬 분비, 체온, 심박수, 신진대사가 모두 이 리듬에 따라 움직인다.</p>
+
+  <!-- SVG: circadian clock -->
+  <div class="illustration">
+    <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#0a140a;border-radius:12px">
+      <defs>
+        <linearGradient id="sky1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#0a1a2a"/>
+          <stop offset="25%" style="stop-color:#1a3050"/>
+          <stop offset="50%" style="stop-color:#f4c842;stop-opacity:0.2"/>
+          <stop offset="75%" style="stop-color:#1a3050"/>
+          <stop offset="100%" style="stop-color:#0a0a1a"/>
+        </linearGradient>
+      </defs>
+      <rect width="800" height="280" fill="url(#sky1)"/>
+      <!-- Timeline bar -->
+      <rect x="40" y="130" width="720" height="8" rx="4" fill="#1a2a1a"/>
+      <!-- Colored segments -->
+      <rect x="40" y="130" width="120" height="8" rx="4" fill="#1a3060" opacity="0.8"/> <!-- 0-6 -->
+      <rect x="160" y="130" width="150" height="8" fill="#f4c842" opacity="0.7"/> <!-- 6-12 -->
+      <rect x="310" y="130" width="180" height="8" fill="#8bc34a" opacity="0.7"/> <!-- 12-18 -->
+      <rect x="490" y="130" width="150" height="8" fill="#e57373" opacity="0.7"/> <!-- 18-21 -->
+      <rect x="640" y="130" width="120" height="8" rx="4" fill="#1a3060" opacity="0.8"/> <!-- 21-24 -->
+
+      <!-- Time labels -->
+      <text x="40" y="165" fill="#5a7a9a" font-size="11" font-family="Oswald">00:00</text>
+      <text x="155" y="165" fill="#f4c842" font-size="11" font-family="Oswald">06:00</text>
+      <text x="305" y="165" fill="#8bc34a" font-size="11" font-family="Oswald">12:00</text>
+      <text x="485" y="165" fill="#e57373" font-size="11" font-family="Oswald">18:00</text>
+      <text x="635" y="165" fill="#5a7a9a" font-size="11" font-family="Oswald">21:00</text>
+      <text x="745" y="165" fill="#5a7a9a" font-size="11" font-family="Oswald">24:00</text>
+
+      <!-- Events -->
+      <g fill="#f4c842" font-family="Noto Sans KR, sans-serif">
+        <circle cx="185" cy="134" r="6" fill="#f4c842"/>
+        <text x="165" y="115" font-size="11" text-anchor="middle" fill="#f4c842">☀️ 기상+햇빛</text>
+        <text x="165" y="127" font-size="10" text-anchor="middle" fill="#c5a030">코르티솔 최고</text>
+      </g>
+      <g>
+        <circle cx="340" cy="134" r="6" fill="#8bc34a"/>
+        <text x="340" y="115" font-size="11" text-anchor="middle" fill="#8bc34a">⚡ 훈련 최적</text>
+        <text x="340" y="127" font-size="10" text-anchor="middle" fill="#6a9a3a">체온·반응 최고</text>
+      </g>
+      <g>
+        <circle cx="420" cy="134" r="6" fill="#42a5f5"/>
+        <text x="420" y="115" font-size="11" text-anchor="middle" fill="#42a5f5">🍽 식사 시간</text>
+        <text x="420" y="127" font-size="10" text-anchor="middle" fill="#3080c0">인슐린 민감도 최고</text>
+      </g>
+      <g>
+        <circle cx="520" cy="134" r="6" fill="#e57373"/>
+        <text x="520" y="115" font-size="11" text-anchor="middle" fill="#e57373">🌅 빛 제한</text>
+        <text x="520" y="127" font-size="10" text-anchor="middle" fill="#b05050">블루라이트 차단</text>
+      </g>
+      <g>
+        <circle cx="680" cy="134" r="6" fill="#9c7ae0"/>
+        <text x="680" y="115" font-size="11" text-anchor="middle" fill="#9c7ae0">🌙 수면</text>
+        <text x="680" y="127" font-size="10" text-anchor="middle" fill="#7a5ab0">멜라토닌 분비</text>
+      </g>
+
+      <!-- Sun arc -->
+      <path d="M 160 134 Q 310 50 490 134" fill="none" stroke="#f4c842" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.4"/>
+
+      <!-- Title -->
+      <text x="400" y="220" font-size="13" text-anchor="middle" fill="#4a6a4a" font-family="Oswald" letter-spacing="2">DAILY CIRCADIAN PERFORMANCE WINDOW</text>
+    </svg>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">34%</div>
+      <div class="unit">퍼포먼스 향상</div>
+      <div class="desc">아침 햇빛 15분 노출 시 오후 훈련 퍼포먼스</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">28%</div>
+      <div class="unit">반응속도 개선</div>
+      <div class="desc">규칙적 일출·일몰 노출 4주 후</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">2×</div>
+      <div class="unit">테스토스테론</div>
+      <div class="desc">아침 햇빛이 남성 호르몬 생성 2배 촉진</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">🌅 아침 햇빛 프로토콜 <span class="tag">PROTOCOL</span></h3>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">기상 직후</div>
+      <div class="tl-content">
+        <div class="tl-title">선글라스 없이 자연광 노출</div>
+        <div class="tl-desc">눈으로 직사광선이 아닌 하늘빛을 보는 것. 망막의 신경절 세포를 활성화해 뇌 시교차상핵(SCN)에 "낮이 시작됐다"는 신호를 보낸다. (Andrew Huberman, Stanford Neuroscience Lab)</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">5~30분</div>
+      <div class="tl-content">
+        <div class="tl-title">최소 노출 시간</div>
+        <div class="tl-desc">흐린 날에는 더 오래(45분). 유리창 안에선 효과 없음 — 반드시 야외로!</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">오전 6~9시</div>
+      <div class="tl-content">
+        <div class="tl-title">저각도 햇빛의 힘</div>
+        <div class="tl-desc">낮게 뜬 태양의 빛은 멜라놉신 수용체를 가장 강력하게 자극한다. 한국 날씨 기준 이 시간대가 최적.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">오후 4~6시</div>
+      <div class="tl-content">
+        <div class="tl-title">훈련 최적 시간대</div>
+        <div class="tl-desc">서캐디언 리듬상 체온, 심폐 기능, 근력, 반응속도가 모두 피크에 도달하는 시간. EPL 클럽들이 연습 시간을 조정하는 이유다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <div class="wb-header">⚠️ 피해야 할 것</div>
+    <p>취침 2시간 전 스마트폰·TV 블루라이트 노출은 멜라토닌 분비를 최대 50% 억제한다. 야간 블루라이트 = 수면 파괴 = 성장호르몬 감소 = 회복 불능 상태</p>
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 스탠퍼드 연구</div>
+    <p>Andrew Huberman 박사(스탠퍼드 신경과학)의 연구팀은 아침 햇빛 노출이 도파민, 코르티솔, 세로토닌의 최적 일일 주기를 세팅하는 '마스터 스위치' 역할을 한다고 밝혔다. 이 리듬이 무너지면 훈련 효율, 집중력, 회복력이 동시에 떨어진다.</p>
+    <div class="source">Source: Huberman Lab, Stanford University — "Light and Circadian Clocks" (2022)</div>
+  </div>
+  <span class="chapter-mark">Chapter 02</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH3: 수면 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">03</div>
+  <h2>수면 —<br><span>무료 성장호르몬 주사</span></h2>
+  <div class="ch-desc">SLEEP — THE MOST POWERFUL PERFORMANCE DRUG ON EARTH</div>
+  <span class="chapter-mark">Chapter 03</span>
+</div>
+
+<div class="page section accent-blue">
+  <h3>😴 왜 수면이 최강의 퍼포먼스 도구인가? <span class="tag">MUST READ</span></h3>
+
+  <p>Matthew Walker 박사(UC 버클리)의 세계적 베스트셀러 <em>"Why We Sleep"</em>에서 밝혀진 사실: 수면 부족은 단 하룻밤 만에 근력 10~30%, 반응속도 30%, 폐활량 15%를 떨어뜨린다.</p>
+
+  <div class="callout">
+    <div class="cl-icon">🧬</div>
+    <h4>수면 중 일어나는 일</h4>
+    <p>성장호르몬의 70%가 깊은 수면(REM) 중 분비된다. 이것이 근육 회복, 뼈 성장, 인대 재생의 핵심 연료다. 어떤 합성 보충제도 이것을 대체할 수 없다.</p>
+  </div>
+
+  <!-- Sleep architecture SVG -->
+  <div class="illustration">
+    <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#080d08;border-radius:12px;padding:10px">
+      <text x="400" y="25" text-anchor="middle" fill="#5a7a5a" font-size="11" font-family="Oswald" letter-spacing="2">수면 사이클 (8시간)</text>
+      <!-- Y axis -->
+      <line x1="60" y1="40" x2="60" y2="170" stroke="#1e3a1e" stroke-width="1"/>
+      <!-- Y labels -->
+      <text x="55" y="60" text-anchor="end" fill="#5a7a5a" font-size="10">깊은수면</text>
+      <text x="55" y="100" text-anchor="end" fill="#5a7a5a" font-size="10">REM</text>
+      <text x="55" y="140" text-anchor="end" fill="#5a7a5a" font-size="10">얕은수면</text>
+      <text x="55" y="168" text-anchor="end" fill="#5a7a5a" font-size="10">각성</text>
+      <!-- Sleep wave -->
+      <polyline points="65,170 90,140 120,60 150,100 180,140 200,60 230,100 260,140 290,60 320,100 350,140 380,100 420,60 460,100 500,140 530,100 560,60 600,100 640,140 680,100 720,140 760,170" fill="none" stroke="#42a5f5" stroke-width="2"/>
+      <!-- GH markers -->
+      <g fill="#8bc34a" opacity="0.7">
+        <circle cx="135" cy="60" r="5"/>
+        <circle cx="215" cy="60" r="5"/>
+        <circle cx="305" cy="60" r="5"/>
+        <circle cx="440" cy="60" r="4"/>
+        <circle cx="575" cy="60" r="3"/>
+      </g>
+      <text x="250" y="185" text-anchor="middle" fill="#3a6a3a" font-size="10" font-family="Oswald">● GH 분비 (깊은 수면 시 성장호르몬 급증)</text>
+      <!-- X labels -->
+      <text x="65" y="185" fill="#3a6a3a" font-size="9">22:00</text>
+      <text x="240" y="185" fill="#3a6a3a" font-size="9">00:00</text>
+      <text x="420" y="185" fill="#3a6a3a" font-size="9">02:00</text>
+      <text x="600" y="185" fill="#3a6a3a" font-size="9">04:00</text>
+      <text x="740" y="185" fill="#3a6a3a" font-size="9">06:00</text>
+    </svg>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">8~10h</div>
+      <div class="unit">청소년 권장</div>
+      <div class="desc">12~18세 운동선수 최적 수면시간 (NSF)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">70%</div>
+      <div class="unit">GH 분비</div>
+      <div class="desc">성장호르몬의 70%가 수면 중 나온다</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">41%</div>
+      <div class="unit">부상 위험↑</div>
+      <div class="desc">수면 6시간 미만 청소년 선수의 부상 위험 증가 (AJSM 2014)</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">🌙 축구 선수를 위한 수면 최적화 5가지 <span class="tag">ACTION</span></h3>
+
+  <div class="card-grid">
+    <div class="visual-card" style="border-top-color:#42a5f5">
+      <div class="vc-icon">🌡️</div>
+      <div class="vc-title">서늘한 방 (18~20°C)</div>
+      <div class="vc-desc">체온이 낮아져야 깊은 수면 진입. 에어컨이 없으면 창문을 열거나 얇은 이불 사용.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:#42a5f5">
+      <div class="vc-icon">⬛</div>
+      <div class="vc-title">완전한 암흑</div>
+      <div class="vc-desc">멜라토닌은 어둠에서만 분비된다. 암막 커튼, 아이마스크. LED 충전 불빛도 제거.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:#42a5f5">
+      <div class="vc-icon">📵</div>
+      <div class="vc-title">취침 2h 전 스크린 금지</div>
+      <div class="vc-desc">블루라이트 차단 안경 or 야간 모드. 더 좋은 건 그냥 안 보는 것.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:#42a5f5">
+      <div class="vc-icon">🕙</div>
+      <div class="vc-title">규칙적 취침 시간</div>
+      <div class="vc-desc">주말에도 같은 시간 자고 일어나기. 서캐디언 리듬의 핵심은 일관성이다.</div>
+    </div>
+  </div>
+
+  <div class="athlete-profile">
+    <div class="athlete-avatar">⚽</div>
+    <div class="athlete-info">
+      <div class="name">크리스티아누 호날두 (Cristiano Ronaldo)</div>
+      <div class="role">이 루틴을 가장 극단적으로 실천하는 선수</div>
+      <div class="quote">"나는 하루에 5번, 각 90분씩 잔다. 총 7.5시간. 수면은 내 퍼포먼스의 가장 중요한 부분이다." — 수면 전문가 Nick Littlehales와의 협업으로 수면 최적화</div>
+    </div>
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 스탠퍼드 수면 연구</div>
+    <p>Cheri Mah 박사(스탠퍼드 수면센터)는 남자 농구팀 선수들에게 10시간 수면을 5~7주 동안 유지하게 한 결과 스프린트 속도 9%, 슈팅 정확도 9.2%, 기분/피로 점수 유의미하게 개선됨을 확인했다. 같은 원칙이 축구에도 적용된다.</p>
+    <div class="source">Source: Mah et al., SLEEP (2011) — "The Effects of Sleep Extension on the Athletic Performance"</div>
+  </div>
+  <span class="chapter-mark">Chapter 03</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH4: 맨발 접지 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">04</div>
+  <h2>맨발 접지 —<br><span>지구의 에너지를 훔쳐라</span></h2>
+  <div class="ch-desc">EARTHING / GROUNDING — THE SCIENCE OF BAREFOOT CONNECTION</div>
+  <span class="chapter-mark">Chapter 04</span>
+</div>
+
+<div class="page section">
+  <h3>👣 접지(Earthing/Grounding)란? <span class="tag">SCIENCE</span></h3>
+
+  <p>지구는 미세한 음전하(자유전자)를 표면에 가지고 있다. 맨발이나 맨손으로 자연 지면(흙, 잔디, 모래)과 접촉하면 이 전자들이 몸 안으로 흘러들어온다. 이것이 <strong style="color:var(--lime)">접지(Grounding/Earthing)</strong>다.</p>
+
+  <!-- Earthing SVG -->
+  <div class="illustration">
+    <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#080e08;border-radius:12px">
+      <!-- Ground -->
+      <rect x="0" y="160" width="700" height="60" fill="#0a1a0a"/>
+      <!-- Grass -->
+      <g fill="#2d5a2d">
+        <rect x="0" y="158" width="700" height="5" rx="2"/>
+      </g>
+      <g stroke="#3d7a3d" stroke-width="2">
+        <line x1="50" y1="160" x2="53" y2="148"/><line x1="60" y1="160" x2="57" y2="150"/>
+        <line x1="120" y1="160" x2="123" y2="146"/><line x1="130" y1="160" x2="127" y2="152"/>
+        <line x1="200" y1="160" x2="203" y2="147"/><line x1="210" y1="160" x2="207" y2="151"/>
+        <line x1="300" y1="160" x2="303" y2="148"/><line x1="310" y1="160" x2="307" y2="150"/>
+        <line x1="400" y1="160" x2="403" y2="147"/><line x1="410" y1="160" x2="407" y2="151"/>
+        <line x1="500" y1="160" x2="503" y2="148"/><line x1="510" y1="160" x2="507" y2="152"/>
+        <line x1="600" y1="160" x2="603" y2="146"/><line x1="610" y1="160" x2="607" y2="150"/>
+        <line x1="650" y1="160" x2="653" y2="148"/>
+      </g>
+      <!-- Person silhouette -->
+      <g transform="translate(330, 60)">
+        <circle cx="20" cy="0" r="14" fill="#2d7a3a"/>
+        <line x1="20" y1="14" x2="20" y2="70" stroke="#2d7a3a" stroke-width="6" stroke-linecap="round"/>
+        <line x1="20" y1="30" x2="0" y2="55" stroke="#2d7a3a" stroke-width="4" stroke-linecap="round"/>
+        <line x1="20" y1="30" x2="40" y2="55" stroke="#2d7a3a" stroke-width="4" stroke-linecap="round"/>
+        <line x1="20" y1="70" x2="5" y2="100" stroke="#2d7a3a" stroke-width="5" stroke-linecap="round"/>
+        <line x1="20" y1="70" x2="35" y2="100" stroke="#2d7a3a" stroke-width="5" stroke-linecap="round"/>
+      </g>
+      <!-- Electrons flowing up -->
+      <g fill="#8bc34a" opacity="0.8">
+        <circle cx="340" cy="150" r="3"><animate attributeName="cy" values="160;130;100;70" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.8;0.4;0" dur="2s" repeatCount="indefinite"/></circle>
+        <circle cx="355" cy="150" r="2"><animate attributeName="cy" values="160;120;90;60" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.7;0.3;0" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="348" cy="155" r="2.5"><animate attributeName="cy" values="162;140;110;80" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0.8;0.4;0" dur="1.8s" repeatCount="indefinite"/></circle>
+      </g>
+      <!-- Labels -->
+      <text x="100" y="130" fill="#5a9a5a" font-size="11" font-family="Noto Sans KR">자유 전자</text>
+      <text x="100" y="145" fill="#3a7a3a" font-size="11" font-family="Noto Sans KR">지구 표면</text>
+      <path d="M 175 135 Q 250 130 325 155" fill="none" stroke="#4a8a4a" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="500" y="100" fill="#8bc34a" font-size="12" font-family="Noto Sans KR">🧬 염증 감소</text>
+      <text x="500" y="118" fill="#8bc34a" font-size="12" font-family="Noto Sans KR">⚡ 에너지 증가</text>
+      <text x="500" y="136" fill="#8bc34a" font-size="12" font-family="Noto Sans KR">🛌 수면 개선</text>
+      <text x="500" y="154" fill="#8bc34a" font-size="12" font-family="Noto Sans KR">💪 회복 가속</text>
+      <!-- Arrow -->
+      <path d="M 490 125 Q 450 120 390 140" fill="none" stroke="#4a8a4a" stroke-width="1.5" stroke-dasharray="4,4" marker-end="url(#arrow)"/>
+    </svg>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">40%</div>
+      <div class="unit">염증 감소</div>
+      <div class="desc">접지 30~40분 후 측정된 혈중 염증 마커 감소율</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">3.48h</div>
+      <div class="unit">수면 개선</div>
+      <div class="desc">접지 매트 사용 그룹 코르티솔 리듬 정상화 (Journal of Alternative Medicine 2004)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">72%</div>
+      <div class="unit">근육통 완화</div>
+      <div class="desc">운동 후 DOMS(지연성 근육통) 감소 — Clint Ober의 접지 연구</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">⚽ 축구 선수를 위한 맨발 접지 루틴 <span class="tag">DAILY PRACTICE</span></h3>
+
+  <div class="card-grid">
+    <div class="visual-card">
+      <div class="vc-icon">🌅</div>
+      <div class="vc-title">아침 잔디 걷기</div>
+      <div class="vc-desc">잔디밭이나 흙 위를 맨발로 10~20분. 아침 햇빛과 동시에 → 더블 효과. 이슬 맺힌 풀밭은 전도성이 더 높다.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🏃</div>
+      <div class="vc-title">워밍업 맨발 드릴</div>
+      <div class="vc-desc">천연 잔디 구장에서 스트레칭과 가벼운 조깅을 맨발로. 발 근육과 고유감각 수용체를 동시에 활성화.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🏖️</div>
+      <div class="vc-title">쿨다운 맨발 걷기</div>
+      <div class="vc-desc">훈련 후 맨발 걷기 20분 = 빠른 염증 제거 + 코르티솔 정상화. 특히 흙길이나 해변이 최고.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🌿</div>
+      <div class="vc-title">자연 속 회복</div>
+      <div class="vc-desc">숲이나 공원에서 맨발. 삼림욕(Forest Bathing, 일본 연구)과 접지를 동시에 — 코르티솔 12.4% 감소 확인.</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>⚽ 천연 잔디 vs 인조 잔디:</strong> 인조 잔디(AstroTurf)는 전도성이 없어 접지 효과가 없다. 또한 마찰력 차이로 부상 위험도 높다. 가능하면 천연 잔디에서 훈련하고, 회복 루틴은 반드시 자연 지면에서 진행하라.
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 접지 과학 연구</div>
+    <p>Chevalier et al. (2012)의 메타 분석에서 접지는 수면, 통증, 코르티솔 분비 리듬, 혈액 점성, 자율신경계 균형에 유의미한 긍정 효과를 보였다. 이는 현재 군사 병원, 수술 후 재활, 만성 염증 치료에서 보조 요법으로 활용되고 있다.</p>
+    <div class="source">Source: Chevalier et al., Journal of Environmental and Public Health (2012) — "Earthing: Health Implications"</div>
+  </div>
+  <span class="chapter-mark">Chapter 04</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH5: 자연식 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">05</div>
+  <h2>자연식 —<br><span>몸이 원하는 진짜 연료</span></h2>
+  <div class="ch-desc">WHOLE FOODS — FUELING PERFORMANCE THE WAY NATURE INTENDED</div>
+  <span class="chapter-mark">Chapter 05</span>
+</div>
+
+<div class="page section">
+  <h3>🥩 가공식품 vs 자연식 <span class="tag">NUTRITION</span></h3>
+
+  <p>미국 스포츠 영양학회(ISSN)의 2024 포지션 스테이트먼트: "정제 탄수화물, 초가공 단백질 바, 합성 비타민보다 자연 상태의 홀푸드가 운동 선수의 회복과 퍼포먼스에 우월한 결과를 보인다."</p>
+
+  <div class="warning-box">
+    <div class="wb-header">❌ 축구 선수들이 자주 먹는 최악의 음식들</div>
+    <p>편의점 컵라면 (초가공 + 나트륨 폭탄) · 에너지 드링크 (혈당 스파이크 + 수면 파괴) · 패스트푸드 버거 (트랜스지방 + 장내 미생물 파괴) · 과자·사탕류 (인슐린 저항성 유발) · 인공감미료 음료 (장내 미생물 40% 감소 — Nature Medicine 2022)</p>
+  </div>
+
+  <h3 style="margin-top:30px">✅ 포지션별 최강 자연 식품 <span class="tag">FOOD LIST</span></h3>
+
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="fc-emoji">🥚</div>
+      <div class="fc-name">달걀 (통달걀)</div>
+      <div class="fc-benefit">완전 단백질 · 콜린(뇌 기능) · 비타민D</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🐟</div>
+      <div class="fc-name">연어 / 고등어</div>
+      <div class="fc-benefit">오메가-3 (염증 제거) · 크레아틴 자연형</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🥩</div>
+      <div class="fc-name">소고기 (목초 사육)</div>
+      <div class="fc-benefit">헴철 · 아연 · 크레아틴 · B12</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🍠</div>
+      <div class="fc-name">고구마</div>
+      <div class="fc-benefit">복합 탄수화물 · 칼륨 · 베타카로틴</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🫐</div>
+      <div class="fc-name">블루베리</div>
+      <div class="fc-benefit">항산화제 · 근육 회복 · 인지 기능</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🥑</div>
+      <div class="fc-name">아보카도</div>
+      <div class="fc-benefit">건강한 지방 · 칼륨 · 마그네슘</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🫚</div>
+      <div class="fc-name">올리브 오일</div>
+      <div class="fc-benefit">폴리페놀 · 항염증 · 심혈관 보호</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🥬</div>
+      <div class="fc-name">시금치 / 케일</div>
+      <div class="fc-benefit">질산염 (혈류 개선) · 철분 · 마그네슘</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🍋</div>
+      <div class="fc-name">비트 주스</div>
+      <div class="fc-benefit">질산염 → 산화질소 → 지구력 3% 향상</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🫘</div>
+      <div class="fc-name">검은콩 / 렌틸콩</div>
+      <div class="fc-benefit">식물성 단백질 · 섬유질 · 철분</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🍌</div>
+      <div class="fc-name">바나나</div>
+      <div class="fc-benefit">즉각 에너지 · 칼륨 · 근육 경련 예방</div>
+    </div>
+    <div class="food-card">
+      <div class="fc-emoji">🫚</div>
+      <div class="fc-name">천연 꿀</div>
+      <div class="fc-benefit">경기 전 빠른 글리코겐 보충 · 항균</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">⏱️ 경기/훈련 전후 영양 타이밍 <span class="tag">TIMING</span></h3>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">3~4시간 전</div>
+      <div class="tl-content">
+        <div class="tl-title">본 식사 — 복합 탄수화물 + 단백질</div>
+        <div class="tl-desc">고구마 + 닭가슴살 or 현미밥 + 연어. 글리코겐 최대 저장.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">30~60분 전</div>
+      <div class="tl-content">
+        <div class="tl-title">가벼운 스낵</div>
+        <div class="tl-desc">바나나 1개 + 꿀 1스푼 or 대추야자(dates) 3~4개. 빠른 연료 보충.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">즉시 (30분 이내)</div>
+      <div class="tl-content">
+        <div class="tl-title">회복 식사 골든 타임</div>
+        <div class="tl-desc">달걀 3개 + 고구마 or 그릭요거트 + 블루베리. 단백질 합성과 글리코겐 재합성 동시에.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">2시간 이내</div>
+      <div class="tl-content">
+        <div class="tl-title">완전 식사</div>
+        <div class="tl-desc">고기 + 채소 + 건강한 지방. 오메가-3 식품(연어, 고등어)이 특히 염증 회복에 중요.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 비트 주스 연구 — 지구력의 비밀</div>
+    <p>Andrew Jones 교수(University of Exeter)의 연구에서 경기 2.5시간 전 비트 주스 500ml 섭취 시 혈중 산화질소 증가로 근육 산소 효율이 향상되어 지구력 퍼포먼스가 평균 1~3% 향상됐다. EPL 및 챔피언스리그 클럽 상당수가 이미 이 프로토콜을 도입했다.</p>
+    <div class="source">Source: Jones et al., Journal of Applied Physiology (2010) — "Dietary Nitrate and Physical Performance"</div>
+  </div>
+  <span class="chapter-mark">Chapter 05</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH6: 수분 ════ -->
+<div class="page section accent-blue" style="padding-top:50px">
+  <h3>💧 수분 — 1%가 10%를 바꾼다 <span class="tag">HYDRATION</span></h3>
+
+  <p>체중의 <strong style="color:#42a5f5">1% 탈수</strong>만으로도 퍼포먼스가 10% 이상 떨어진다. 더 무서운 건 청소년 선수들은 탈수 감지 능력이 성인보다 늦어 갈증을 느끼기 전 이미 탈수 상태인 경우가 많다.</p>
+
+  <div class="spectrum-bar">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:10px;font-family:'Oswald',sans-serif;letter-spacing:1px">탈수 수준별 퍼포먼스 영향</div>
+    <div class="sb-row">
+      <div class="sb-label">1% 탈수</div>
+      <div class="sb-bar-bg"><div class="sb-bar-fill" style="width:20%;background:#f4c842"></div></div>
+      <div class="sb-val">-10%</div>
+    </div>
+    <div class="sb-row">
+      <div class="sb-label">2% 탈수</div>
+      <div class="sb-bar-bg"><div class="sb-bar-fill" style="width:40%;background:#f4a020"></div></div>
+      <div class="sb-val">-20%</div>
+    </div>
+    <div class="sb-row">
+      <div class="sb-label">3% 탈수</div>
+      <div class="sb-bar-bg"><div class="sb-bar-fill" style="width:60%;background:#e57020"></div></div>
+      <div class="sb-val">-30%</div>
+    </div>
+    <div class="sb-row">
+      <div class="sb-label">5% 탈수</div>
+      <div class="sb-bar-bg"><div class="sb-bar-fill" style="width:80%;background:#c62828"></div></div>
+      <div class="sb-val">-50%</div>
+    </div>
+  </div>
+
+  <div class="pill-list">
+    <div class="pill">💧 기상 직후 500ml 물</div>
+    <div class="pill">💧 훈련 전 400~600ml</div>
+    <div class="pill">💧 훈련 중 15분마다 150~200ml</div>
+    <div class="pill">💧 훈련 후 체중 감소량 × 1.5배 보충</div>
+    <div class="pill">💧 전해질: 소금 조금 + 레몬즙</div>
+    <div class="pill">🚫 스포츠 드링크 = 설탕물 주의</div>
+  </div>
+
+  <div class="callout">
+    <div class="cl-icon">💡</div>
+    <h4>자연 전해질 레시피</h4>
+    <p>물 500ml + 히말라야 핑크솔트 1/4 티스푼 + 레몬즙 1/2개 + 꿀 1/2 티스푼<br>
+    → 게토레이보다 흡수율 높고 첨가물 제로. 영국 프리미어리그 선수들도 사용.</p>
+  </div>
+  <span class="chapter-mark">Chapter 05 cont.</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH6: 스프린트 & 움직임 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">06</div>
+  <h2>스프린트 &<br><span>기능적 움직임</span></h2>
+  <div class="ch-desc">SPRINTING, MOBILITY & MOVEMENT — TRAIN LIKE YOUR ANCESTORS</div>
+  <span class="chapter-mark">Chapter 06</span>
+</div>
+
+<div class="page section accent-orange">
+  <h3>⚡ 왜 스프린트가 최고의 운동인가? <span class="tag">PERFORMANCE</span></h3>
+
+  <p>현대인은 오래 앉아 있고 천천히 오래 달리는 만성 유산소 운동에 익숙하다. 그러나 인류의 진화 역사와 축구라는 스포츠의 특성상 우리 몸이 가장 잘 반응하는 건 <strong style="color:var(--orange)">짧고 강렬한 스프린트</strong>다.</p>
+
+  <div class="stat-row">
+    <div class="stat-card" style="--lime:var(--orange)">
+      <div class="num" style="color:var(--orange)">200m</div>
+      <div class="unit">평균 90분 경기 내</div>
+      <div class="desc">한 선수가 스프린트하는 총 거리 (FIFA 데이터)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" style="color:var(--orange)">54×</div>
+      <div class="unit">방향 전환</div>
+      <div class="desc">90분 경기 중 평균 방향 전환 횟수</div>
+    </div>
+    <div class="stat-card">
+      <div class="num" style="color:var(--orange)">96%</div>
+      <div class="unit">무산소 에너지</div>
+      <div class="desc">스프린트 시 인체가 사용하는 에너지 시스템 비율</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">🏃 자연 기반 스프린트 훈련법 <span class="tag">PROTOCOL</span></h3>
+
+  <div class="card-grid">
+    <div class="visual-card" style="border-top-color:var(--orange)">
+      <div class="vc-icon">🏔️</div>
+      <div class="vc-title">언덕 스프린트</div>
+      <div class="vc-desc">10~30° 경사의 언덕에서 15~30m 전력 질주 × 6~10회. 부상 위험 낮음 + 폭발력 + 자연 저항 훈련. 무하마드 알리가 가장 사랑한 훈련.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:var(--orange)">
+      <div class="vc-icon">🏖️</div>
+      <div class="vc-title">모래사장 스프린트</div>
+      <div class="vc-desc">부드러운 지면으로 관절 충격 최소화. 근육 활성화 27% 증가 (연구 결과). 맨발로 하면 접지 효과 추가.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:var(--orange)">
+      <div class="vc-icon">🌿</div>
+      <div class="vc-title">잔디밭 스프린트</div>
+      <div class="vc-desc">천연 잔디에서 맨발 스프린트. 고유감각 발달 + 발목 근육 강화. 특히 어린 선수(12~16세)에게 필수.</div>
+    </div>
+    <div class="visual-card" style="border-top-color:var(--orange)">
+      <div class="vc-icon">🔄</div>
+      <div class="vc-title">인터벌 스프린트</div>
+      <div class="vc-desc">10초 전력질주 → 50초 휴식 × 8~12세트. 성장호르몬 분비 일반 조깅의 7배. 체지방 연소 + 근육 보존.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">🤸 모빌리티 — 다치지 않는 몸 만들기 <span class="tag">INJURY PREVENTION</span></h3>
+
+  <p>모빌리티(유연성 + 가동성)는 단순한 스트레칭이 아니다. 관절이 힘을 갖춘 채로 움직일 수 있는 능력이다. Kelly Starrett 박사(CrossFit 의학팀)는 "유연하지 않은 근육은 부서진다"고 말한다.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">아침 10분</div>
+      <div class="tl-content">
+        <div class="tl-title">맨발 모빌리티 루틴</div>
+        <div class="tl-desc">고관절 굴신 × 10 → 흉추 회전 × 10 → 발목 서클 × 20 → 스쿼트 싯 30초 × 3. 맨발로 바닥에서!</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">훈련 전 15분</div>
+      <div class="tl-content">
+        <div class="tl-title">동적 워밍업</div>
+        <div class="tl-desc">레그 스윙 → 힙 서클 → 래터럴 런지 → 다이나믹 스트레칭. 정적 스트레칭은 훈련 전에 하지 마라 (파워 10% 감소).</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">훈련 후 15분</div>
+      <div class="tl-content">
+        <div class="tl-title">쿨다운 정적 스트레칭 + 맨발 걷기</div>
+        <div class="tl-desc">햄스트링·종아리·고관절굴근 각 30초 × 3. 마지막에 맨발 걷기 10분으로 마무리.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 모빌리티와 부상 예방</div>
+    <p>Amsterdam UMC 연구팀(2021)의 분석에서 주 3회 이상 모빌리티 훈련을 실시한 청소년 축구 선수들은 그렇지 않은 그룹보다 햄스트링 부상 66%, 발목 인대 부상 45% 감소를 보였다.</p>
+    <div class="source">Source: van Dyk et al., British Journal of Sports Medicine (2021)</div>
+  </div>
+  <span class="chapter-mark">Chapter 06</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH7: 자연 & 회복 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">07</div>
+  <h2>자연 속<br><span>회복의 과학</span></h2>
+  <div class="ch-desc">NATURE — THE ORIGINAL RECOVERY CLINIC</div>
+  <span class="chapter-mark">Chapter 07</span>
+</div>
+
+<div class="page section">
+  <h3>🌲 자연이 몸을 고친다 — 산림욕의 과학 <span class="tag">RECOVERY</span></h3>
+
+  <p>일본의 '신린요쿠(森林浴, 산림욕)' 연구는 1980년대부터 지금까지 수백 편의 논문이 발표됐다. 숲 속에 있는 것만으로 몸은 회복 모드로 전환된다.</p>
+
+  <div class="card-grid">
+    <div class="visual-card">
+      <div class="vc-icon">🌿</div>
+      <div class="vc-title">피톤치드 효과</div>
+      <div class="vc-desc">나무가 내뿜는 피톤치드(terpenes)는 NK세포(자연살해세포) 활성을 증가시켜 면역력을 강화하고 항염증 효과를 낸다.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🧘</div>
+      <div class="vc-title">부교감 신경 활성화</div>
+      <div class="vc-desc">자연 환경은 교감 신경(전투 모드)을 끄고 부교감 신경(회복 모드)을 켠다. 코르티솔 12.4%, 아드레날린 17.8% 감소.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">👁️</div>
+      <div class="vc-title">시각적 자연 노출</div>
+      <div class="vc-desc">자연 속 불규칙한 패턴(프랙탈 구조)은 알파파를 증가시켜 정신적 피로를 빠르게 회복시킨다.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">❄️🔥 냉온 대조 요법 — 자연 회복의 극치 <span class="tag">ADVANCED</span></h3>
+
+  <p>위름 호프(Wim Hof) 메서드와 스칸디나비아 전통 사우나 문화를 기반으로 한 냉온 교차 노출은 현재 세계 최고 수준의 회복 프로토콜로 인정받고 있다.</p>
+
+  <div class="breathing-visual">
+    <div class="breath-step">
+      <div class="bs-num">🔥</div>
+      <div class="bs-label">온열 (사우나)</div>
+      <div class="bs-action">10~15분, 80~100°C</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">❄️</div>
+      <div class="bs-label">냉각 (냉수)</div>
+      <div class="bs-action">2~3분, 10~15°C</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">🔁</div>
+      <div class="bs-label">반복</div>
+      <div class="bs-action">3~5세트</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">✅</div>
+      <div class="bs-label">효과</div>
+      <div class="bs-action">회복 2배 가속</div>
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">66%</div>
+      <div class="unit">DOMS 감소</div>
+      <div class="desc">냉수 목욕(10~15°C) 후 지연성 근육통 감소</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">21%</div>
+      <div class="unit">GH 증가</div>
+      <div class="desc">사우나 후 성장호르몬 급증 (Finnish Studies)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">4×</div>
+      <div class="unit">기분 개선</div>
+      <div class="desc">냉수 샤워 후 도파민/노르에피네프린 증가</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>💡 집에서 간단하게:</strong> 찬 물 샤워(20~30초)만으로도 도파민이 250% 증가한다는 연구 결과가 있다 (Shevchuk, Medical Hypotheses 2008). 훈련 후 찬물 샤워 → 맨발 접지 → 자연 채광 노출 = 자연 기반 회복 3콤보.
+  </div>
+
+  <div class="research-box">
+    <div class="rb-header">🔬 산림욕 연구 — 일본 의학부</div>
+    <p>Qing Li 박사(Nippon Medical School)의 연구에서 삼림욕 3일 후 NK세포 활성이 50% 증가했으며, 이 효과가 30일 이상 지속됐다. 염증 마커(IL-6, TNF-α)도 유의미하게 감소했다.</p>
+    <div class="source">Source: Li et al., International Journal of Immunopathology and Pharmacology (2009)</div>
+  </div>
+  <span class="chapter-mark">Chapter 07</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH8: 마인드셋 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">08</div>
+  <h2>마인드셋 —<br><span>챔피언의 뇌 만들기</span></h2>
+  <div class="ch-desc">MINDSET — THE PSYCHOLOGY OF ELITE NATURAL PERFORMANCE</div>
+  <span class="chapter-mark">Chapter 08</span>
+</div>
+
+<div class="page section">
+  <h3>🧠 자연 기반 정신 훈련 <span class="tag">MINDSET</span></h3>
+
+  <p>심리학적 퍼포먼스는 약으로 살 수 없다. 세계 최고의 스포츠 심리학자들이 동의하는 한 가지 — <strong style="color:var(--lime)">마인드는 자연 속에서 강해진다.</strong></p>
+
+  <div class="card-grid">
+    <div class="visual-card">
+      <div class="vc-icon">🌅</div>
+      <div class="vc-title">자연 노출 = 집중력</div>
+      <div class="vc-desc">자연 환경에서 시간을 보내면 전두엽 피질의 집중 네트워크가 회복된다. "Attention Restoration Theory" (Kaplan, 1989)</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🧘</div>
+      <div class="vc-title">호흡 컨트롤</div>
+      <div class="vc-desc">박스 호흡(4-4-4-4)이나 횡격막 호흡은 자율신경계를 리셋한다. 경기 전 긴장 → 2분 호흡으로 해소.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">🗣️</div>
+      <div class="vc-title">내적 대화</div>
+      <div class="vc-desc">"난 안 돼" → "난 지금 배우고 있어." 성장 마인드셋(Carol Dweck)은 훈련 적응 속도를 높인다.</div>
+    </div>
+    <div class="visual-card">
+      <div class="vc-icon">📓</div>
+      <div class="vc-title">감사 일기</div>
+      <div class="vc-desc">매일 밤 3가지 감사한 점 쓰기. 도파민·세로토닌 상승, 코르티솔 감소. 선수들의 번아웃 방지에 효과적.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:30px">🫁 챔피언 호흡법 — 박스 호흡 <span class="tag">PROTOCOL</span></h3>
+
+  <p>미 해군 SEAL, NBA 선수, UEFA 챔피언십 팀이 사용하는 호흡법. 경기 전, 경기 중 타임아웃, 훈련 전 사용.</p>
+
+  <div class="breathing-visual">
+    <div class="breath-step">
+      <div class="bs-num">4</div>
+      <div class="bs-label">들이쉬기</div>
+      <div class="bs-action">코로 4초</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">4</div>
+      <div class="bs-label">멈추기</div>
+      <div class="bs-action">참기 4초</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">4</div>
+      <div class="bs-label">내쉬기</div>
+      <div class="bs-action">입으로 4초</div>
+    </div>
+    <div class="breath-step">
+      <div class="bs-num">4</div>
+      <div class="bs-label">멈추기</div>
+      <div class="bs-action">비우고 4초</div>
+    </div>
+  </div>
+
+  <div class="big-quote">
+    <blockquote>"The body achieves what the <span>mind</span> believes."</blockquote>
+    <cite>나폴레온 힐 — 철학자</cite>
+  </div>
+
+  <h3>🔋 도파민 관리 — 현대의 가장 큰 적 <span class="tag">DOPAMINE</span></h3>
+
+  <p>스마트폰, 소셜미디어, 에너지 드링크, 폭식 — 이 모든 것이 도파민 과잉 자극을 일으켜 실제 훈련에서의 만족감과 집중력을 파괴한다.</p>
+
+  <div class="warning-box">
+    <div class="wb-header">⚠️ 도파민을 고갈시키는 것들 (축구 선수 주의)</div>
+    <p>📱 밤 늦은 SNS 스크롤링 → 주의집중 파편화<br>
+    🎮 밤새 게임 → 수면 파괴 + 도파민 무감각<br>
+    ⚡ 에너지 드링크 → 가짜 에너지 + 이후 크래시<br>
+    🍟 정크푸드 폭식 → 보상 회로 교란</p>
+  </div>
+
+  <div class="pill-list">
+    <div class="pill">✅ 자연 도파민: 성취감</div>
+    <div class="pill">✅ 자연 도파민: 운동</div>
+    <div class="pill">✅ 자연 도파민: 냉수 노출</div>
+    <div class="pill">✅ 자연 도파민: 음악</div>
+    <div class="pill">✅ 자연 도파민: 사회적 연결</div>
+    <div class="pill">✅ 자연 도파민: 창의적 도전</div>
+  </div>
+
+  <div class="athlete-profile">
+    <div class="athlete-avatar">🌿</div>
+    <div class="athlete-info">
+      <div class="name">Erling Haaland</div>
+      <div class="role">맨체스터 시티 → 레알 마드리드, 세계 최고 스트라이커</div>
+      <div class="quote">"나는 수면을 최우선으로 한다. 취침 전 청색광 차단 안경을 쓰고, TV나 스마트폰을 보지 않는다. 필요 시 귀마개와 안대를 쓴다. 음식은 최대한 자연 그대로를 먹으려 한다." — BBC Sport 인터뷰 (2024)</div>
+    </div>
+  </div>
+  <span class="chapter-mark">Chapter 08</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH9: 풀 루틴 ════ -->
+<div class="page chapter-divider">
+  <div class="ch-num">09</div>
+  <h2>완전한<br><span>하루 루틴</span></h2>
+  <div class="ch-desc">THE COMPLETE NATURAL FOOTBALLER'S DAILY ROUTINE</div>
+  <span class="chapter-mark">Chapter 09</span>
+</div>
+
+<div class="page section">
+  <h3>📅 Natural Footballer — 훈련일 전체 루틴 <span class="tag">FULL ROUTINE</span></h3>
+
+  <!-- Full day visual -->
+  <div class="illustration">
+    <svg viewBox="0 0 760 60" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#090d09;border-radius:10px;padding:5px">
+      <!-- Time gradient bar -->
+      <defs>
+        <linearGradient id="daybar" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#1a3060"/>
+          <stop offset="20%" style="stop-color:#f4c842;stop-opacity:0.5"/>
+          <stop offset="50%" style="stop-color:#8bc34a;stop-opacity:0.5"/>
+          <stop offset="75%" style="stop-color:#e57373;stop-opacity:0.4"/>
+          <stop offset="100%" style="stop-color:#1a3060"/>
+        </linearGradient>
+      </defs>
+      <rect x="10" y="25" width="740" height="10" rx="5" fill="url(#daybar)"/>
+      <text x="10" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">06:00</text>
+      <text x="155" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">09:00</text>
+      <text x="300" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">12:00</text>
+      <text x="450" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">15:00</text>
+      <text x="600" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">21:00</text>
+      <text x="720" y="18" fill="#5a7a5a" font-size="9" font-family="Oswald">23:00</text>
+    </svg>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">06:00~06:30</div>
+      <div class="tl-content">
+        <div class="tl-title">☀️ 기상 + 아침 햇빛 루틴</div>
+        <div class="tl-desc">스마트폰 보지 않기 → 창문 열기 or 야외 → 선글라스 없이 5~15분 하늘빛 노출 → 500ml 상온 물 + 소금 + 레몬</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">06:30~07:00</div>
+      <div class="tl-content">
+        <div class="tl-title">👣 맨발 모빌리티 + 접지</div>
+        <div class="tl-desc">잔디 or 흙 위에서 맨발 → 모빌리티 드릴 10분 → 걷기 10분 → 박스 호흡 2분</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">07:00~07:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🥚 아침 식사 (자연식)</div>
+        <div class="tl-desc">달걀 3개 + 고구마 or 현미밥 + 시금치 + 올리브 오일. 과일 (블루베리 or 바나나)</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">15:00~16:00</div>
+      <div class="tl-content">
+        <div class="tl-title">⚡ 훈련 전 준비</div>
+        <div class="tl-desc">훈련 1시간 전: 바나나 + 꿀 → 30분 전: 워밍업 드릴 → 15분 전: 비트 주스 or 자연 전해질</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">16:00~18:00</div>
+      <div class="tl-content">
+        <div class="tl-title">⚽ 훈련 (서캐디언 피크 타임)</div>
+        <div class="tl-desc">이 시간대가 체온·반응속도·근력 모두 최고. 수분은 매 15분마다 보충.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">18:00~18:30</div>
+      <div class="tl-content">
+        <div class="tl-title">❄️ 쿨다운 + 회복</div>
+        <div class="tl-desc">스트레칭 10분 → 맨발 걷기 10분 → 가능하면 찬물 샤워 or 냉수욕 → 자연 전해질 음료</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">18:30~19:30</div>
+      <div class="tl-content">
+        <div class="tl-title">🍽️ 훈련 후 식사 (골든 타임)</div>
+        <div class="tl-desc">달걀 or 닭 or 소고기 + 채소 + 현미 or 고구마 + 연어 or 고등어 (주 3회). 오메가-3 필수!</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">21:00</div>
+      <div class="tl-content">
+        <div class="tl-title">📵 블루라이트 차단 시작</div>
+        <div class="tl-desc">스마트폰 야간 모드 or 완전 차단. 독서 or 가벼운 대화. 실내 조명 어둡게 (따뜻한 색)</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">21:30</div>
+      <div class="tl-content">
+        <div class="tl-title">📓 취침 루틴</div>
+        <div class="tl-desc">감사 일기 3가지 → 4-7-8 호흡 → 침실 18~20°C + 완전 암흑 → 목표: 22:00~22:30 수면</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">22:00~06:00</div>
+      <div class="tl-content">
+        <div class="tl-title">😴 8시간 수면 = 무료 성장호르몬</div>
+        <div class="tl-desc">이 8시간이 모든 훈련의 결과를 만들어낸다. 어떤 보충제도 이것을 대체 못한다.</div>
+      </div>
+    </div>
+  </div>
+  <span class="chapter-mark">Chapter 09</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ CH10: 주간 계획 ════ -->
+<div class="page section" style="padding-top:30px">
+  <h3>📆 주간 자연 기반 루틴 플랜 <span class="tag">WEEKLY PLAN</span></h3>
+
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead>
+        <tr style="background:#0f2010">
+          <th style="padding:12px 10px;text-align:left;color:var(--lime);font-family:'Oswald',sans-serif;border-bottom:2px solid #1e3a1e">요일</th>
+          <th style="padding:12px 10px;text-align:left;color:var(--lime);font-family:'Oswald',sans-serif;border-bottom:2px solid #1e3a1e">훈련</th>
+          <th style="padding:12px 10px;text-align:left;color:var(--lime);font-family:'Oswald',sans-serif;border-bottom:2px solid #1e3a1e">자연 회복</th>
+          <th style="padding:12px 10px;text-align:left;color:var(--lime);font-family:'Oswald',sans-serif;border-bottom:2px solid #1e3a1e">영양 포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #1a2a1a">
+          <td style="padding:10px;color:var(--accent);font-weight:700">MON</td>
+          <td style="padding:10px;color:#c5d9c5">팀 훈련 + 스프린트</td>
+          <td style="padding:10px;color:var(--muted)">맨발 쿨다운 + 냉수 샤워</td>
+          <td style="padding:10px;color:var(--muted)">오메가-3 (연어/고등어)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2a1a;background:#0a120a">
+          <td style="padding:10px;color:var(--accent);font-weight:700">TUE</td>
+          <td style="padding:10px;color:#c5d9c5">모빌리티 + 언덕 스프린트</td>
+          <td style="padding:10px;color:var(--muted)">산림욕 30분 + 접지</td>
+          <td style="padding:10px;color:var(--muted)">블루베리 + 항산화 식품</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2a1a">
+          <td style="padding:10px;color:var(--accent);font-weight:700">WED</td>
+          <td style="padding:10px;color:#c5d9c5">전술 훈련 + 패스 드릴</td>
+          <td style="padding:10px;color:var(--muted)">사우나 + 냉수 교차</td>
+          <td style="padding:10px;color:var(--muted)">복합 탄수화물 집중</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2a1a;background:#0a120a">
+          <td style="padding:10px;color:var(--accent);font-weight:700">THU</td>
+          <td style="padding:10px;color:#c5d9c5">경량 훈련 + 맨발 드릴</td>
+          <td style="padding:10px;color:var(--muted)">잔디 맨발 접지 20분</td>
+          <td style="padding:10px;color:var(--muted)">단백질 + 마그네슘 식품</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2a1a">
+          <td style="padding:10px;color:var(--lime);font-weight:700">FRI</td>
+          <td style="padding:10px;color:#c5d9c5">경기 전날 — 가벼운 활성화</td>
+          <td style="padding:10px;color:var(--muted)">스트레칭 + 호흡 + 수면 집중</td>
+          <td style="padding:10px;color:var(--muted)">글리코겐 로딩 (복합탄)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #1a2a1a;background:#0a120a">
+          <td style="padding:10px;color:#ef9a9a;font-weight:700">SAT</td>
+          <td style="padding:10px;color:#ef9a9a;font-weight:600">⚽ 경기일</td>
+          <td style="padding:10px;color:var(--muted)">비트 주스 + 경기 후 냉수</td>
+          <td style="padding:10px;color:var(--muted)">경기 후 단백질 + 전해질</td>
+        </tr>
+        <tr>
+          <td style="padding:10px;color:#42a5f5;font-weight:700">SUN</td>
+          <td style="padding:10px;color:#42a5f5">완전 회복일 🛌</td>
+          <td style="padding:10px;color:var(--muted)">자연 산책 + 접지 + 수면</td>
+          <td style="padding:10px;color:var(--muted)">항염 식품 (오메가-3, 강황)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <span class="chapter-mark">Chapter 10</span>
+</div>
+
+
+<!-- ════════════════════════════════════════ FINAL CTA ════ -->
+<div class="page" id="final-cta">
+  <h2>자연으로 돌아가<br><span>진짜 선수가 되어라</span></h2>
+  <p>알약은 없다. 지름길도 없다. 하지만 지구상에서 가장 강력한 퍼포먼스 도구들이 이미 당신 주변에 있다.</p>
+  <p>햇빛, 잠, 자연식, 맨발, 신선한 공기 — 이것이 수만 년 동안 인류가 사용해온 도구다.</p>
+
+  <div class="checklist">
+    <div class="check-item">매일 아침 햇빛 10분</div>
+    <div class="check-item">8~10시간 수면</div>
+    <div class="check-item">맨발 접지 20분</div>
+    <div class="check-item">가공식품 줄이기</div>
+    <div class="check-item">냉수 샤워 or 냉수욕</div>
+    <div class="check-item">블루라이트 차단</div>
+    <div class="check-item">주 2회 자연 속 회복</div>
+    <div class="check-item">박스 호흡 매일</div>
+    <div class="check-item">전해질 수분 보충</div>
+    <div class="check-item">스프린트 훈련</div>
+  </div>
+
+  <div class="big-quote">
+    <blockquote>"Take care of your body. It's the only place <span>you have to live.</span>"</blockquote>
+    <cite>짐 론 (Jim Rohn)</cite>
+  </div>
+
+  <div class="manifesto">
+    SUNLIGHT · SLEEP · GROUNDING · WHOLE FOODS<br>
+    NATURE · MOVEMENT · MIND · FOOTBALL
+  </div>
+
+  <p style="margin-top:30px;color:#4a6a4a;font-size:12px;max-width:500px;margin-left:auto;margin-right:auto">
+    이 전자책은 스탠퍼드, UC버클리, 일본 의학부, 영국 스포츠과학 연구소의 공개 연구 데이터를 바탕으로 작성되었습니다. 의학적 진단이나 치료를 대체하지 않습니다. 심각한 부상이나 질환은 전문 의료진과 상담하세요.
+  </p>
+</div>
+
+</body>
+</html>
